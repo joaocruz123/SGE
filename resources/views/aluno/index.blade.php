@@ -33,7 +33,7 @@
 
                                     <a href="/aluno/{{$aluno->id}}/edit" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>
                                     <a href="/aluno/{{$aluno->id}}/" title="Visualizar"><button class="btn btn-primary btn-circle waves-effect"><i class="material-icons">visibility</i></button> </a>
-                                   <button data-color="red" type="button" class="btn btn-danger btn-circle waves-effect" data-toggle="modal" data-target="#ModalDelete"><i class="material-icons">close</i></button>
+                                    <button data-color="red" type="button" class="btn btn-danger btn-circle waves-effect" data-toggle="modal" data-target="#ModalDelete"><i class="material-icons">close</i></button>
                                     <div class="modal fade" id="ModalDelete" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
