@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "76036da3b5b55b91dbe1e1affa01bf9e",
+    "content-hash": "811c452ba0757fb6fdb73b12c26ff3b9",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -839,16 +839,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.7",
+            "version": "v0.8.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "be969b9dc89dcaefdb9a3117fa91fa38bca19f50"
+                "reference": "fe65c30cbc55c71e61ba3a38b5a581149be31b8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/be969b9dc89dcaefdb9a3117fa91fa38bca19f50",
-                "reference": "be969b9dc89dcaefdb9a3117fa91fa38bca19f50",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/fe65c30cbc55c71e61ba3a38b5a581149be31b8e",
+                "reference": "fe65c30cbc55c71e61ba3a38b5a581149be31b8e",
                 "shasum": ""
             },
             "require": {
@@ -908,7 +908,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-06-20T12:51:31+00:00"
+            "time": "2017-06-24T06:16:19+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -2029,6 +2029,49 @@
             "time": "2015-05-11T14:41:42+00:00"
         },
         {
+            "name": "laralib/l5scaffold",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laralib/l5scaffold.git",
+                "reference": "623ae6207c42371a60ffce3daceb728217d93c9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laralib/l5scaffold/zipball/623ae6207c42371a60ffce3daceb728217d93c9e",
+                "reference": "623ae6207c42371a60ffce3daceb728217d93c9e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laralib\\L5scaffold\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fernando Brito",
+                    "email": "fernandobritofl@gmail.com"
+                }
+            ],
+            "description": "Extend Laravel 5's generators scaffold.",
+            "keywords": [
+                "generators",
+                "laravel",
+                "laravel5",
+                "scaffold"
+            ],
+            "time": "2016-07-05T12:44:30+00:00"
+        },
+        {
             "name": "mockery/mockery",
             "version": "0.9.9",
             "source": {
@@ -2595,16 +2638,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.20",
+            "version": "5.7.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b"
+                "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
-                "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3b91adfb64264ddec5a2dee9851f354aa66327db",
+                "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db",
                 "shasum": ""
             },
             "require": {
@@ -2673,7 +2716,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-05-22T07:42:55+00:00"
+            "time": "2017-06-21T08:11:54+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
