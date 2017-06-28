@@ -18,3 +18,12 @@ Route::get('/', 'HomeController@index');
 Route::group(['middleware' => ['web']], function(){
     Route::resource('aluno', 'AlunoController');
 });
+
+Route::group(['middleware' => ['web']], function(){
+    Route::resource('turmas', 'TurmaController');
+});
+
+Route::group(['middleware' => ['web']], function(){
+    Route::resource('professors', 'ProfessorController');
+});
+

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
+
     <!-- Bootstrap Core Css -->
     <link href="/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -50,16 +51,19 @@
                 </div>
 
                 <!-- Right Side Of Navbar -->
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-
+                        <div class="collapse navbar-collapse" id="navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                <strong>{{ Auth::user()->name }}</strong> <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
@@ -79,7 +83,7 @@
                         </li>
 
                 </ul>
-
+                </div>
                 <!-- Left Sidebar -->
                 <aside id="leftsidebar" class="sidebar">
                     <!-- Menu -->
@@ -96,6 +100,12 @@
                                 <a href="/aluno">
                                     <i class="material-icons">school</i>
                                     <span>Aluno</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('/turmas')}}">
+                                    <i class="material-icons">class</i>
+                                    <span>Turmas</span>
                                 </a>
                             </li>
                         </ul>
@@ -115,7 +125,6 @@
                 @endif
             </div>
         </nav>
-
         @yield('content')
     </div>
 
@@ -158,6 +167,7 @@
     <!-- Custom Js -->
     <script src="/js/admin.js"></script>
     <script src="/js/pages/index.js"></script>
+    <script src="/js/pages/ui/notifications.js"></script>
 
 </body>
 </html>
