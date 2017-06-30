@@ -25,6 +25,9 @@
     <!-- Custom Css -->
     <link href="/css/style.css" rel="stylesheet">
 
+    <!-- Bootstrap Select Css -->
+    <link href="/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="/css/themes/all-themes.css" rel="stylesheet" />
 
@@ -97,15 +100,21 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/aluno">
-                                    <i class="material-icons">school</i>
-                                    <span>Aluno</span>
+                                <a href="/alunos">
+                                    <i class="material-icons">person</i>
+                                    <span>Alunos</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{url('/turmas')}}">
                                     <i class="material-icons">class</i>
                                     <span>Turmas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('/professors')}}">
+                                    <i class="material-icons">school</i>
+                                    <span>Professores</span>
                                 </a>
                             </li>
                         </ul>
@@ -168,6 +177,7 @@
     <script src="/js/admin.js"></script>
     <script src="/js/pages/index.js"></script>
     <script src="/js/pages/ui/notifications.js"></script>
+    <script src="/js/pages/forms/basic-form-elements.js"></script>
 
 </body>
 </html>

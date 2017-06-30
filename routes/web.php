@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 
 Route::group(['middleware' => ['web']], function(){
-    Route::resource('aluno', 'AlunoController');
+    Route::resource('alunos', 'AlunoController');
 });
 
 Route::group(['middleware' => ['web']], function(){

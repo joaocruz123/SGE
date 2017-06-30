@@ -8,7 +8,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h1><i class="material-icons">class</i> Editar Turmas #{{$turma->id}}</h1>
+                            <h1><i class="material-icons">class</i> Editar Turma #{{$turma->id}}</h1>
                         </div>
                         <div class="body table-responsive">
                             <form action="{{ route('turmas.update', $turma->id) }}" method="POST">
