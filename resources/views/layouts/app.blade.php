@@ -117,6 +117,12 @@
                                     <span>Professores</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{url('/matriculas')}}">
+                                    <i class="material-icons">picture_in_picture</i>
+                                    <span>Matriculas</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <!-- #Menu -->
