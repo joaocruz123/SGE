@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Matricula extends Model {
 
-    protected $dates = ['deleted_at'];
-
     protected $table    = 'matriculas';
 
     protected $fillable=['aluno_id' , 'turma_id'];
