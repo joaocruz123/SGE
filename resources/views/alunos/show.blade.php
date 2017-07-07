@@ -22,16 +22,8 @@
                                 <div class="col-md-12">
                                     <form action="#">
                                         <div class="form-group">
-                                            <label for="nome">RG</label>
-                                            <p class="form-control-static">{{$aluno->rg}}</p>
-                                        </div>
-                                        <div class="form-group">
                                             <label for="nome">CPF</label>
                                             <p class="form-control-static">{{$aluno->cpf}}</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="nome">Matricula</label>
-                                            <p class="form-control-static">{{$aluno->matricula}}</p>
                                         </div>
                                         <div class="form-group">
                                             <label for="nome">Idade</label>

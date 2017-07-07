@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 
 class ProfessorController extends Controller {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -45,9 +41,10 @@ class ProfessorController extends Controller {
 		$professor = new Professor();
 
 		$professor->nome = $request->input("nome");
+        $professor->cpf = $request->input("cpf");
         $professor->endereco = $request->input("endereco");
+        $professor->telefone = $request->input("telefone");
         $professor->sexo = $request->input("sexo");
-        $professor->idade = $request->input("idade");
 
 		$professor->save();
 
@@ -92,9 +89,10 @@ class ProfessorController extends Controller {
 		$professor = Professor::findOrFail($id);
 
 		$professor->nome = $request->input("nome");
+        $professor->cpf = $request->input("cpf");
         $professor->endereco = $request->input("endereco");
+        $professor->telefone = $request->input("telefone");
         $professor->sexo = $request->input("sexo");
-        $professor->idade = $request->input("idade");
 
 		$professor->save();
 

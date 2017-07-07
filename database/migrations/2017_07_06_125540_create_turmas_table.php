@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlunosTable extends Migration {
+class CreateTurmasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,11 @@ class CreateAlunosTable extends Migration {
 	 */
 	public function up()
 	{
-
+		Schema::create('turmas', function(Blueprint $table) {
+            $table->increments('id');
+            $table->string('nome');
+            $table->timestamps();
+        });
 	}
 
 	/**
@@ -22,7 +26,7 @@ class CreateAlunosTable extends Migration {
 	 */
 	public function down()
 	{
-
+		Schema::drop('turmas');
 	}
 
 }

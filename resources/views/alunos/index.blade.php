@@ -13,11 +13,10 @@
                         <div class="body table-responsive">
                             @if($alunos->count())
                                 <table class="table table-bordered">
-                                    <thead>
+                                    <thead class="bg-blue-grey">
                                     <tr>
                                         <th>#</th>
                                         <th>NOME</th>
-                                        <th>MATRICULA</th>
                                         <th>DATA DE CADASTRO</th>
                                         <th>AÇÃO</th>
                                     </tr>
@@ -27,7 +26,6 @@
                                         <tr>
                                             <td>{{$aluno->id}}</td>
                                             <td>{{$aluno->nome}}</td>
-                                            <td>{{$aluno->matricula}}</td>
                                             <td>{{$aluno->created_at}}</td>
                                             <td>
                                                 <a href="{{ route('alunos.edit', $aluno->id) }}" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>

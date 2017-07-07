@@ -87,6 +87,7 @@
 
                 </ul>
                 </div>
+                </ul>
                 <!-- Left Sidebar -->
                 <aside id="leftsidebar" class="sidebar">
                     <!-- Menu -->
@@ -132,7 +133,7 @@
                             &copy; 2017 <a href="{{url('/')}}">SGEBD</a> - Desenvolvido por João Cruz.
                         </div>
                         <div class="version">
-                            <b>Version: </b> 1.0.3
+                            <b>Version: </b> 1.0.4
                         </div>
                     </div>
                     <!-- #Footer -->

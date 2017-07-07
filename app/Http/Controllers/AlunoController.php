@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 
 class AlunoController extends Controller {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -44,13 +40,11 @@ class AlunoController extends Controller {
 	{
 		$aluno = new Aluno();
 
-        $aluno->nome = $request->input("nome");
-        $aluno->rg = $request->input("rg");
+		$aluno->nome = $request->input("nome");
         $aluno->cpf = $request->input("cpf");
-        $aluno->matricula = $request->input("matricula");
-        $aluno->idade = $request->input("idade");
         $aluno->sexo = $request->input("sexo");
         $aluno->endereco = $request->input("endereco");
+        $aluno->idade = $request->input("idade");
         $aluno->telefone = $request->input("telefone");
 
 		$aluno->save();
@@ -95,13 +89,11 @@ class AlunoController extends Controller {
 	{
 		$aluno = Aluno::findOrFail($id);
 
-        $aluno->nome = $request->input("nome");
-        $aluno->rg = $request->input("rg");
+		$aluno->nome = $request->input("nome");
         $aluno->cpf = $request->input("cpf");
-        $aluno->matricula = $request->input("matricula");
-        $aluno->idade = $request->input("idade");
         $aluno->sexo = $request->input("sexo");
         $aluno->endereco = $request->input("endereco");
+        $aluno->idade = $request->input("idade");
         $aluno->telefone = $request->input("telefone");
 
 		$aluno->save();

@@ -1,48 +1,52 @@
-@extends('layout')
-@section('header')
-<div class="page-header">
-        <h1>Professors / Show #{{$professor->id}}</h1>
-        <form action="{{ route('professors.destroy', $professor->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="btn-group pull-right" role="group" aria-label="...">
-                <a class="btn btn-warning btn-group" role="group" href="{{ route('professors.edit', $professor->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-                <button type="submit" class="btn btn-danger">Delete <i class="glyphicon glyphicon-trash"></i></button>
-            </div>
-        </form>
-    </div>
-@endsection
+@extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header bg-blue">
+                            <form action="{{ route('alunos.destroy', $professor->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar? A confirmação apagará PERMANENTEMENTE!')) { return true } else {return false };">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <div class="btn-group pull-right" role="group" aria-label="...">
+                                    <a class="btn btn-warning btn-group" role="group" href="{{ route('alunos.edit', $professor->id) }}"><i class="material-icons">edit</i> Editar</a>
+                                    <button type="submit" class="btn btn-danger"><i class="material-icons">delete</i> Deletar </button>
+                                </div>
+                            </form>
+                            <h1><i class="material-icons">school</i> {{$professor->nome}}</h1>
+                        </div>
+                        <div class="body table-responsive">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form action="#">
+                                        <div class="form-group">
+                                            <label for="nome">CPF</label>
+                                            <p class="form-control-static">{{$professor->cpf}}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nome">Sexo</label>
+                                            <p class="form-control-static">{{$professor->sexo}}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nome">Endereço</label>
+                                            <p class="form-control-static">{{$professor->endereco}}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nome">Telefone</label>
+                                            <p class="form-control-static">{{$professor->telefone}}</p>
+                                        </div>
+                                    </form>
+                                    <a class="btn btn-link" href="{{ route('professors.index') }}"><i class="material-icons">arrow_back</i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <form action="#">
-                <div class="form-group">
-                    <label for="nome">ID</label>
-                    <p class="form-control-static"></p>
-                </div>
-                <div class="form-group">
-                     <label for="nome">NOME</label>
-                     <p class="form-control-static">{{$professor->nome}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="endereco">ENDERECO</label>
-                     <p class="form-control-static">{{$professor->endereco}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="sexo">SEXO</label>
-                     <p class="form-control-static">{{$professor->sexo}}</p>
-                </div>
-                    <div class="form-group">
-                     <label for="idade">IDADE</label>
-                     <p class="form-control-static">{{$professor->idade}}</p>
-                </div>
-            </form>
-
-            <a class="btn btn-link" href="{{ route('professors.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
 
         </div>
-    </div>
-
+    </section>
 @endsection

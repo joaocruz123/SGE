@@ -26,17 +26,6 @@
                                         <span class="help-block">{{ $errors->first("nome") }}</span>
                                     @endif
                                 </div>
-                                <div class="form-group @if($errors->has('rg')) has-error @endif">
-                                    <label for="nome-field">RG:</label>
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="number" id="rg-field" name="rg" class="form-control" value="{{ is_null(old("rg")) ? $aluno->rg : old("rg") }}"/>
-                                        </div>
-                                    </div>
-                                    @if($errors->has("rg"))
-                                        <span class="help-block">{{ $errors->first("rg") }}</span>
-                                    @endif
-                                </div>
                                 <div class="form-group @if($errors->has('cpf')) has-error @endif">
                                     <label for="nome-field">CPF:</label>
                                     <div class="form-group">
@@ -46,17 +35,6 @@
                                     </div>
                                     @if($errors->has("nome"))
                                         <span class="help-block">{{ $errors->first("cpf") }}</span>
-                                    @endif
-                                </div>
-                                <div class="form-group @if($errors->has('matricula')) has-error @endif">
-                                    <label for="nome-field">Matricula:</label>
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="number" id="matricula-field" name="matricula" class="form-control" value="{{ is_null(old("matricula")) ? $aluno->matricula : old("matricula") }}"/>
-                                        </div>
-                                    </div>
-                                    @if($errors->has("nome"))
-                                        <span class="help-block">{{ $errors->first("matricula") }}</span>
                                     @endif
                                 </div>
                                 <div class="form-group @if($errors->has('idade')) has-error @endif">

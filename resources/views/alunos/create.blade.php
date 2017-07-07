@@ -27,17 +27,6 @@
                                                 <span class="help-block">{{ $errors->first("nome") }}</span>
                                             @endif
                                         </div>
-                                        <div class="form-group @if($errors->has('rg')) has-error @endif">
-                                            <label for="nome-field">RG:</label>
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="number" id="rg-field" name="rg" class="form-control" value="{{ old("rg") }}"/>
-                                                </div>
-                                            </div>
-                                            @if($errors->has("rg"))
-                                                <span class="help-block">{{ $errors->first("rg") }}</span>
-                                            @endif
-                                        </div>
                                         <div class="form-group @if($errors->has('cpf')) has-error @endif">
                                             <label for="nome-field">CPF:</label>
                                             <div class="form-group">
@@ -47,17 +36,6 @@
                                             </div>
                                             @if($errors->has("cpf"))
                                                 <span class="help-block">{{ $errors->first("cpf") }}</span>
-                                            @endif
-                                        </div>
-                                        <div class="form-group @if($errors->has('matricula')) has-error @endif">
-                                            <label for="nome-field">Matricula:</label>
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="number" id="matricula-field" name="matricula" class="form-control" value="{{ old("matricula") }}"/>
-                                                </div>
-                                            </div>
-                                            @if($errors->has("matricula"))
-                                                <span class="help-block">{{ $errors->first("matricula") }}</span>
                                             @endif
                                         </div>
                                         <div class="form-group @if($errors->has('idade')) has-error @endif">
@@ -76,9 +54,9 @@
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <select class="form-control show-tick" id="sexo-field" name="sexo">
-                                                        <option value="{{ old("sexo") }}">-- Please select --</option>
-                                                        <option value="masculino">Masculino</option>
-                                                        <option value="feminino">Feminino</option>
+                                                        <option value="{{ old("sexo") }}">-- Selecione --</option>
+                                                        <option value="Masculino">Masculino</option>
+                                                        <option value="Feminino">Feminino</option>
                                                     </select>
                                                 </div>
                                             </div>

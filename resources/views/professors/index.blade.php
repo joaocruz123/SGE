@@ -13,7 +13,7 @@
                         <div class="body table-responsive">
                             @if($professors->count())
                                 <table class="table table-bordered">
-                                    <thead>
+                                    <thead class="bg-blue-grey">
                                     <tr>
                                         <th>#</th>
                                         <th>NOME</th>
