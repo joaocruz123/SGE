@@ -13,5 +13,4 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('matriculas', 'MatriculaController');
 
-
 });

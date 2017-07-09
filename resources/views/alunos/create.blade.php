@@ -15,7 +15,7 @@
                                 <div class="body table-responsive">
                                     <form action="{{ route('alunos.store') }}" method="POST">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+                                        <div class="col-sm-6">
                                         <div class="form-group @if($errors->has('nome')) has-error @endif">
                                             <label for="nome-field">Nome:</label>
                                             <div class="form-group">
@@ -27,6 +27,8 @@
                                                 <span class="help-block">{{ $errors->first("nome") }}</span>
                                             @endif
                                         </div>
+                                        </div>
+                                        <div class="col-sm-6">
                                         <div class="form-group @if($errors->has('cpf')) has-error @endif">
                                             <label for="nome-field">CPF:</label>
                                             <div class="form-group">
@@ -38,6 +40,8 @@
                                                 <span class="help-block">{{ $errors->first("cpf") }}</span>
                                             @endif
                                         </div>
+                                        </div>
+                                        <div class="col-sm-4">
                                         <div class="form-group @if($errors->has('idade')) has-error @endif">
                                             <label for="nome-field">Idade:</label>
                                             <div class="form-group">
@@ -49,6 +53,22 @@
                                                 <span class="help-block">{{ $errors->first("idade") }}</span>
                                             @endif
                                         </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group @if($errors->has('telefone')) has-error @endif">
+                                                <label for="nome-field">Telefone:</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="number" id="telefone-field" name="telefone" class="form-control" value="{{ old("telefone") }}"/>
+                                                    </div>
+                                                </div>
+                                                @if($errors->has("telefone"))
+                                                    <span class="help-block">{{ $errors->first("telefone") }}</span>
+                                                @endif
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-4">
                                         <div class="form-group @if($errors->has('sexo')) has-error @endif">
                                             <label for="nome-field">Sexo:</label>
                                             <div class="form-group">
@@ -64,6 +84,8 @@
                                                 <span class="help-block">{{ $errors->first("sexo") }}</span>
                                             @endif
                                         </div>
+                                        </div>
+                                        <div class="col-sm-12">
                                         <div class="form-group @if($errors->has('endereco')) has-error @endif">
                                             <label for="nome-field">Endereço:</label>
                                             <div class="form-group">
@@ -75,19 +97,11 @@
                                                 <span class="help-block">{{ $errors->first("endereco") }}</span>
                                             @endif
                                         </div>
-                                        <div class="form-group @if($errors->has('telefone')) has-error @endif">
-                                            <label for="nome-field">Telefone:</label>
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="number" id="telefone-field" name="telefone" class="form-control" value="{{ old("telefone") }}"/>
-                                                </div>
-                                            </div>
-                                            @if($errors->has("telefone"))
-                                                <span class="help-block">{{ $errors->first("telefone") }}</span>
-                                            @endif
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Criar</button>
-                                        <a class="btn btn-link pull-right" href="{{ route('alunos.index') }}"><i class="material-icons">arrow_back</i></a>
+                                        <div class="footer">
+                                            <button type="submit" class="btn btn-primary">Criar</button>
+                                            <a class="btn btn-link pull-right" href="{{ route('alunos.index') }}"><i class="material-icons">arrow_back</i></a>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
