@@ -10,6 +10,7 @@
                             <a href="{{ route('alunos.create') }}"><button type="button" class="btn bg-green waves-effect pull-right"><i class="material-icons">add</i> Novo Aluno</button></a>
                             <h1><i class="material-icons">person</i> Alunos</h1>
                         </div>
+
                         <div class="body table-responsive">
                             @if($alunos->count())
                                 <table class="table table-bordered">
@@ -50,4 +51,5 @@
             </div>
         </div>
     </section>
+
 @endsection

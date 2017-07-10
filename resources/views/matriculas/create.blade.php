@@ -4,17 +4,16 @@
     @include('error')
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="card">
                                 <div class="header">
-                                    <h1><i class="material-icons">add</i> Matricular</h1>
+                                    <h1><i class="material-icons">picture_in_picture</i> Matricular</h1>
                                 </div>
                                 <div class="body table-responsive">
                                     <form action="{{ route('matriculas.store') }}" method="POST">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <div class="form-group">
                                         @if( count($alunos)<1 )
                                             <br>
                                             <h5 class="red-text">
@@ -22,8 +21,8 @@
                                             </h5>
                                             <br>
                                         @else
-                                            <div class="input-field">
-                                                <select  name="aluno" id="aluno" required>
+                                                <label for="aluno">Aluno: </label>
+                                                <select class="form-control show-tick" name="aluno" id="aluno" required>
 
 
                                                     @foreach($alunos as $aluno)
@@ -32,10 +31,9 @@
 
 
                                                 </select>
-                                                <label for="aluno">Aluno</label>
-                                            </div>
                                         @endif
-
+                                        </div>
+                                        <div class="form-group">
                                         @if( count($turmas)<1 )
                                             <br>
                                             <h5 class="red-text">
@@ -43,8 +41,8 @@
                                             </h5>
                                             <br>
                                         @else
-                                            <div class="input-field">
-                                                <select name="turma" id="turma" required>
+                                                <label for="turma">Turma: </label>
+                                                <select class="form-control show-tick" name="turma" id="turma" required>
 
 
                                                     @foreach($turmas as $turma)
@@ -53,9 +51,10 @@
 
 
                                                 </select>
-                                                <label for="turma">Turma</label>
-                                            </div>
+
                                         @endif
+                                        </div>
+                                        <div class="footer">
                                         @if( ( count($turmas) < 1 ) || ( count($alunos) < 1 ) )
                                             <div class="center">
                                                 <button class="btn disabled">Cadastrar</button>
@@ -65,14 +64,13 @@
                                         <button type="submit" class="btn btn-primary">Criar</button>
                                         <a class="btn btn-link pull-right" href="{{ route('matriculas.index') }}"><i class="material-icons">arrow_back</i></a>
                                     @endif
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </section>
 
 @endsection

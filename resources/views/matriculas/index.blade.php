@@ -8,7 +8,7 @@
                     <div class="card">
                         <div class="header">
                             <a href="{{ route('matriculas.create') }}"><button type="button" class="btn bg-green waves-effect pull-right"><i class="material-icons">add</i> Nova Matricula</button></a>
-                            <h1><i class="material-icons">school</i> Matriculas</h1>
+                            <h1><i class="material-icons">picture_in_picture</i> Matriculas</h1>
                         </div>
                         <div class="body table-responsive">
                             @if($matriculas->count())
