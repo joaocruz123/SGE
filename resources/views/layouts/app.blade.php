@@ -124,6 +124,29 @@
                                     <span>Matriculas</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <i class="material-icons">credit_card</i>
+                                    <span>Gerenciamento de Despesas</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="{{url('/categorias_despesas')}}">Categorias de Despesas</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/categorias_rendas')}}">Categorias de Rendas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Despesas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Rendas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Relatório Mensal</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <!-- #Menu -->

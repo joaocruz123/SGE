@@ -13,4 +13,8 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('matriculas', 'MatriculaController');
 
+    Route::resource('categorias_despesas', 'CategoriasDespesaController');
+
+    Route::resource('categorias_rendas', 'CategoriasRendaController');
+
 });
