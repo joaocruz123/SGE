@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 @section('content')
     <section class="content">
         <div class="container-fluid">
@@ -15,13 +17,17 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group @if($errors->has('nome')) has-error @endif">
-                       <label for="nome-field">Nome</label>
-                    <input type="text" id="nome-field" name="nome" class="form-control" value="{{ is_null(old("nome")) ? $categorias_renda->nome : old("nome") }}"/>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label for="nome-field">Nome</label>
+                            <input type="text" id="nome-field" name="nome" class="form-control" value="{{ is_null(old("nome")) ? $categorias_renda->nome : old("nome") }}"/>
+                        </div>
+                    </div>
                        @if($errors->has("nome"))
                         <span class="help-block">{{ $errors->first("nome") }}</span>
                        @endif
                     </div>
-                <div class="well well-sm">
+                <div class="footer">
                     <button type="submit" class="btn btn-primary">Save</button>
                     <a class="btn btn-link pull-right" href="{{ route('categorias_rendas.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
                 </div>

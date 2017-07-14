@@ -21,7 +21,7 @@ class AlunoController extends Controller {
 
     public function index()
 	{
-		$alunos = Aluno::orderBy('id', 'desc')->paginate(10);
+		$alunos = Aluno::orderBy('nome', 'asc')->paginate(10);
 
 		return view('alunos.index', compact('alunos'));
 	}

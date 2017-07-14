@@ -16,7 +16,7 @@
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">
                         <tr>
-                            <th>ID</th>
+                            <th>#</th>
                             <th>CATEGORIA</th>
                             <th>AÇÃO</th>
                         </tr>

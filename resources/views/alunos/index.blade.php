@@ -27,7 +27,7 @@
                                         <tr>
                                             <td>{{$aluno->id}}</td>
                                             <td>{{$aluno->nome}}</td>
-                                            <td>{{$aluno->created_at}}</td>
+                                            <td>{{date('d/m/Y', strtotime($aluno->created_at))}}</td>
                                             <td>
                                                 <a href="{{ route('alunos.edit', $aluno->id) }}" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>
                                                 <a href="{{ route('alunos.show', $aluno->id) }}" title="Visualizar"><button class="btn btn-primary btn-circle waves-effect"><i class="material-icons">visibility</i></button> </a>

@@ -31,6 +31,7 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="/css/themes/all-themes.css" rel="stylesheet" />
 
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -39,7 +40,8 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.Laravel =
+        <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -50,6 +52,8 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
+                    <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                    <a href="javascript:void(0);" class="bars"></a>
                     <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
                 </div>
 
@@ -137,7 +141,7 @@
                                         <a href="{{url('/categorias_rendas')}}">Categorias de Rendas</a>
                                     </li>
                                     <li>
-                                        <a href="#">Despesas</a>
+                                        <a href="{{url('/despesas')}}">Despesas</a>
                                     </li>
                                     <li>
                                         <a href="#">Rendas</a>

@@ -17,4 +17,7 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('categorias_rendas', 'CategoriasRendaController');
 
+    Route::resource('despesas', 'DespesasController');
+
+
 });

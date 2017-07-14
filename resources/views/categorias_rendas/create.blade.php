@@ -30,7 +30,7 @@
                     </div>
                 <div class="footer">
                     <button type="submit" class="btn btn-primary">Criar</button>
-                    <a class="btn btn-link pull-right" href="{{ route('categorias_despesas.index') }}"><i class="material-icons">arrow_back</i></a>
+                    <a class="btn btn-link pull-right" href="{{ route('categorias_rendas.index') }}"><i class="material-icons">arrow_back</i></a>
                 </div>
             </form>
 
