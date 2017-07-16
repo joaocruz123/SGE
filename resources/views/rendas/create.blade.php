@@ -10,30 +10,30 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="card">
                                 <div class="header">
-                                    <h1><i class="material-icons">add</i> Adicione uma Despesa</h1>
+                                    <h1><i class="material-icons">add</i> Adicione uma Receita</h1>
                                 </div>
                                 <div class="body table-responsive">
-
-                                    <form action="{{ route('despesas.store') }}" method="POST">
+                                    <form action="{{ route('rendas.store') }}" method="POST">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="col-sm-4">
-                                        <div class="form-group">
-                                            @if( count($categorias_despesas)<1 )
-                                                <br>
-                                                <h5 class="red-text">
-                                                    Nenhuma Categoria Encontrada!
-                                                </h5>
-                                                <br>
-                                            @else
-                                                <label for="aluno">Categoria: </label>
-                                                <select class="form-control show-tick" name="categoria_despesa_id" id="categoria_despesa_id" required>
-                                                    @foreach($categorias_despesas as $categorias_despesa)
-                                                        <option value="{{$categorias_despesa->id}}">{{$categorias_despesa->nome}}</option>
-                                                    @endforeach
-                                                </select>
-                                            @endif
-                                        </div>
+                                            <div class="form-group">
+                                                @if( count($categorias_rendas)<1 )
+                                                    <br>
+                                                    <h5 class="red-text">
+                                                        Nenhuma Categoria Encontrada!
+                                                    </h5>
+                                                    <br>
+                                                @else
+                                                    <label for="categoria">Categoria: </label>
+                                                    <select class="form-control show-tick" name="categoria_renda_id" id="categoria_renda_id" required>
+                                                        @foreach($categorias_rendas as $categorias_renda)
+                                                            <option value="{{$categorias_renda->id}}">{{$categorias_renda->nome}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                @endif
                                             </div>
+                                        </div>
+
                                         <div class="col-sm-4">
                                             <div class="form-group @if($errors->has('data')) has-error @endif">
                                                 <label for="nome-field">Data:</label>
@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="footer">
                                             <button type="submit" class="btn btn-primary">Criar</button>
-                                            <a class="btn btn-link pull-right" href="{{ route('despesas.index') }}"><i class="material-icons">arrow_back</i></a>
+                                            <a class="btn btn-link pull-right" href="{{ route('rendas.index') }}"><i class="material-icons">arrow_back</i></a>
                                         </div>
                                     </form>
 

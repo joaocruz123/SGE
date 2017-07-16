@@ -19,5 +19,8 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('despesas', 'DespesasController');
 
+    Route::resource('rendas', 'RendasController');
+
+    Route::resource('relatorio_mensal', 'RelatorioMensalController');
 
 });

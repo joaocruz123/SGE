@@ -144,10 +144,10 @@
                                         <a href="{{url('/despesas')}}">Despesas</a>
                                     </li>
                                     <li>
-                                        <a href="#">Rendas</a>
+                                        <a href="{{url('/rendas')}}">Rendas</a>
                                     </li>
                                     <li>
-                                        <a href="#">Relatório Mensal</a>
+                                        <a href="{{url('/relatorio_mensal')}}">Relatório Mensal</a>
                                     </li>
                                 </ul>
                             </li>
