@@ -30,7 +30,7 @@
                                             <td>{{date('d/m/Y', strtotime($aluno->created_at))}}</td>
                                             <td>
                                                 <a href="{{ route('alunos.edit', $aluno->id) }}" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>
-                                                <a href="{{ route('alunos.show', $aluno->id) }}" title="Visualizar"><button class="btn btn-primary btn-circle waves-effect"><i class="material-icons">visibility</i></button> </a>
+                                                <button class="btn btn-primary btn-circle waves-effect" data-toggle="modal" data-target="#modal-{{ $aluno->id }}"><i class="material-icons">visibility</i></button>
                                                 <form action="{{ route('alunos.destroy', $aluno->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar? A confirmação apagará PERMANENTEMENTE!')) { return true } else {return false };">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -38,6 +38,37 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        <!-- Modal de Visualização -->
+                                        <div class="modal fade" id="modal-{{ $aluno->id }}" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header bg-blue">
+                                                        <h1 id="ModalLabel">{{$aluno->nome}}</h1>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-sm-6">
+                                                            <label>Idade:</label>
+                                                            <p>{{$aluno->idade}} anos</p>
+                                                            <label>CPF:</label>
+                                                            <p>{{$aluno->cpf}}</p>
+                                                            <label>Endereço:</label>
+                                                            <p>{{$aluno->endereco}}</p>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label>Data de Cadastro:</label>
+                                                            <p>{{date('d/m/Y', strtotime($aluno->created_at))}}</p>
+                                                            <label>Telefone:</label>
+                                                            <p>{{$aluno->telefone}}</p>
+                                                            <label>Ultima atualização:</label>
+                                                            <p>{{date('d/m/Y', strtotime($aluno->updated_at))}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">FECHAR</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
                                     </tbody>
                                 </table>

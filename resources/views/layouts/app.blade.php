@@ -40,8 +40,7 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel =
-        <?php echo json_encode([
+        window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -200,18 +199,16 @@
     <!-- Moment Plugin Js -->
     <script src="/plugins/momentjs/moment.js"></script>
 
-    <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-
     <!-- Bootstrap Notify Plugin Js -->
     <script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
-    <script src="/js/pages/ui/modals.js"></script>
+
+    <script src="/js/modals.js"></script>
 
     <!-- Custom Js -->
     <script src="/js/admin.js"></script>
     <script src="/js/pages/index.js"></script>
-    <script src="/js/pages/ui/notifications.js"></script>
-    <script src="/js/pages/forms/basic-form-elements.js"></script>
+    <script src="/js/notifications.js"></script>
+    <script src="/js/basic-form-elements.js"></script>
 
 </body>
 </html>

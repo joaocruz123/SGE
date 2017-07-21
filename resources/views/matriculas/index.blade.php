@@ -15,7 +15,7 @@
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">
                                     <tr>
-                                        <th>NÚMERO DE MATRICULA</th>
+                                        <th>MATRICULA</th>
                                         <th>ALUNO</th>
                                         <th>TURMA</th>
                                         <th>AÇÃO</th>
@@ -24,7 +24,7 @@
                                     <tbody>
                                     @foreach($matriculas as $matricula)
                                         <tr>
-                                            <td>{{$matricula->id}}{{$matricula->turma->id}}{{$matricula->aluno->cpf}}</td>
+                                            <td>{{$matricula->id}}{{$matricula->turma->id}}</td>
                                             <td>{{$matricula->aluno->nome}}</td>
                                             <td>{{$matricula->turma->nome}}</td>
                                             <td>

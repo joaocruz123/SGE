@@ -4227,11 +4227,15 @@ section.content {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.31) !important;
   border: none; }
   .modal .modal-content .modal-body {
-    color: #777;
+    color: #212121;
     padding: 15px 25px; }
 
 .modal .modal-footer {
   border: none; }
+
+.modal p{
+  color: red;
+}
 
 .modal-col-red {
   background-color: #F44336; }
