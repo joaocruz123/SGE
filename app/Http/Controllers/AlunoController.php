@@ -19,9 +19,18 @@ class AlunoController extends Controller {
     }
 
 
-    public function index()
+    public function index(Request $request)
 	{
-		$alunos = Aluno::orderBy('nome', 'asc')->paginate(10);
+        $keyword =$request->get('search');
+        $perPage =10;
+
+        if(!empty($keyword)){
+            $alunos = Aluno::where('nome','LIKE',"%$keyword%")
+                ->orWhere('endereco', 'LIKE', "%$keyword%")
+                ->paginate($perPage);
+        }else{
+            $alunos = Aluno::orderBy('nome', 'asc')->paginate($perPage);
+        }
 
 		return view('alunos.index', compact('alunos'));
 	}

@@ -17,11 +17,24 @@ class MatriculaController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $matriculas = Matricula::with(['aluno', 'turma'])->get();
+        $turma_id = $request->get('turma');
 
-        return view('matriculas.index', compact('matriculas'));
+        $perPage = 20;
+
+        if (!empty($turma_id)) {
+            $matriculas = Matricula::with('turma')
+                ->where('turma_id', '=', $turma_id)
+                ->paginate($perPage);
+        }
+        else
+        {
+            $matriculas = Matricula::with(['aluno', 'turma'])->get();
+        }
+        $turmas=Turma::all();
+
+        return view('matriculas.index', compact('matriculas', 'turmas'));
     }
     /**
      * Show the form for creating a new resource.

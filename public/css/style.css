@@ -5026,7 +5026,7 @@ section.content {
 
 .form-group {
   width: 100%;
-  margin-bottom: 25px; }
+  margin-bottom: 8px; }
   .form-group .form-control {
     width: 100%;
     border: none;
@@ -7717,4 +7717,8 @@ html.ie11 .dropdown-menu ul.menu li a {
 
 html.ie11 .bs-searchbox .form-control {
   width: 90%; }
+
+.btn-busca{
+  margin-left: 10px;
+}
 

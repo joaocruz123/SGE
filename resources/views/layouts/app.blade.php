@@ -166,9 +166,10 @@
                 </aside>
                 @endif
             </div>
+            </div>
         </nav>
         @yield('content')
-    </div>
+
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
@@ -210,5 +211,6 @@
     <script src="/js/notifications.js"></script>
     <script src="/js/basic-form-elements.js"></script>
 
+</div>
 </body>
 </html>

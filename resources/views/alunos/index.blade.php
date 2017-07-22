@@ -10,8 +10,15 @@
                             <a href="{{ route('alunos.create') }}"><button type="button" class="btn bg-green waves-effect pull-right"><i class="material-icons">add</i> Novo Aluno</button></a>
                             <h1><i class="material-icons">person</i> Alunos</h1>
                         </div>
-
                         <div class="body table-responsive">
+                            {!! Form::open(['method' => 'GET', 'url' => '/alunos',  'role' => 'search']) !!}
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                            <input type="text" class="form-control" name="search" placeholder="Buscar Aluno..">
+                            </div></div></div>
+                            <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
+                            {!! Form::close() !!}
                             @if($alunos->count())
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">
@@ -70,14 +77,16 @@
                                             </div>
                                         </div>
                                     @endforeach
+
                                     </tbody>
                                 </table>
-                                {!! $alunos->render() !!}
+                                {!! $alunos->appends(['search'=>Request::get('search')])->render() !!}
                         </div>
                         @else
                             <h3 class="text-center alert alert-info">Nenhum Aluno!</h3>
                         @endif
                     </div>
+
                 </div>
             </div>
         </div>

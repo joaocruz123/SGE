@@ -11,7 +11,31 @@
                             <h1><i class="material-icons">picture_in_picture</i> Matriculas</h1>
                         </div>
                         <div class="body table-responsive">
-                            @if($matriculas->count())
+                            {!! Form::open(['method' => 'GET', 'url' => '/matriculas',  'role' => 'turma']) !!}
+                            @if( count($turmas)<1 )
+                                <br>
+                                <h5 class="red-text">
+                                    Nenhum Turma encontrada!
+                                </h5>
+                                <br>
+                            @else
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <select class="form-control" name="turma" id="turma" required>
+                                                @foreach($turmas as $turma)
+                                                    <option value="{{$turma->id}}">{{$turma->nome}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            @endif
+                            <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
+
+                            {!! Form::close() !!}
+                        @if($matriculas->count())
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">
                                     <tr>
