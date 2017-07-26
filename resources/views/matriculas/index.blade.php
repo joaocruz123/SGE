@@ -19,7 +19,7 @@
                                 </h5>
                                 <br>
                             @else
-                                <div class="col-sm-6">
+                                <div class="col-sm-5">
                                     <div class="form-group">
                                         <div class="form-line">
                                             <select class="form-control" name="turma" id="turma" required>
@@ -32,6 +32,20 @@
 
                                 </div>
                             @endif
+                            <div class="col-sm-1">
+
+                            <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
+</div>
+                            {!! Form::close() !!}
+                            {!! Form::open(['method' => 'GET', 'url' => '/matriculas',  'role' => 'aluno']) !!}
+                            <div class="col-sm-5">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="search" placeholder="Buscar Aluno..">
+                                </div>
+                            </div>
+
+                            </div>
                             <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
 
                             {!! Form::close() !!}

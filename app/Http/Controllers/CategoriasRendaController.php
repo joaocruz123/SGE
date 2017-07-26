@@ -13,6 +13,12 @@ class CategoriasRendaController extends Controller {
 	 *
 	 * @return Response
 	 */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 	public function index()
 	{
 		$categorias_rendas = CategoriasRenda::orderBy('id', 'desc')->paginate(10);
