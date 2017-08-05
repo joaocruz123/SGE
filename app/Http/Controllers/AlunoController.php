@@ -4,7 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Aluno;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AlunoController extends Controller {
 
@@ -129,5 +131,24 @@ class AlunoController extends Controller {
 
 		return redirect()->route('alunos.index')->with('message', 'Item deleted successfully.');
 	}
+
+	public function gerarPdf(Request $request){
+        $keyword =$request->get('search');
+
+        if(!empty($keyword)){
+            $alunos = Aluno::where('nome','LIKE',"%$keyword%")
+                ->get();
+        }else{
+            $alunos = Aluno::orderBy('nome', 'asc')->get();
+        }
+        if(count($alunos)==0){
+            Session::flash('flash_message', 'Nenhum Aluno na lista de impressão!');
+            return redirect('alunos');
+        }
+        $pdf = app('dompdf.wrapper');
+        $pdf->loadView('alunos.pdf', compact('alunos') );
+
+        return $pdf->download(md5( date('Y-m-d H:i:s') ).'.pdf');
+    }
 
 }

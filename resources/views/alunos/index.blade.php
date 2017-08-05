@@ -7,7 +7,27 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <a href="{{ route('alunos.create') }}"><button type="button" class="btn bg-green waves-effect pull-right"><i class="material-icons">add</i> Novo Aluno</button></a>
+                            <div class="pull-right">
+                            @if(count($alunos)>0)
+                                {!! Form::open([
+                                    'method'=>'GET',
+                                    'url' => ['/imprimir/lista'],
+                                    'style' => 'display:inline',
+                                    'role' => 'search'
+                                ]) !!}
+
+                                {!! Form::button('<i class="material-icons" aria-hidden="true">print</i> Imprimir todos os Alunos <span class="label label-default">'.'</span>', array(
+                                        'type' => 'submit',
+                                        'class' => 'btn bg-indigo waves-effect',
+                                        'title' => 'Imprimir',
+                                        'onclick'=>'return confirm("Deseja imprimir?")'
+                                )) !!}
+                                {!! Form::close() !!}
+                            @else
+                                <h3>Nenhum Aluno para Impressão</h3>
+                            @endif
+                            <a href="{{ route('alunos.create') }}"><button type="button" class="btn bg-green waves-effect "><i class="material-icons">add</i> Novo Aluno</button></a>
+                            </div>
                             <h1><i class="material-icons">person</i> Alunos</h1>
                         </div>
                         <div class="body table-responsive">

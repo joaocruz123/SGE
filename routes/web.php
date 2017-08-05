@@ -23,4 +23,7 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('relatorio_mensal', 'RelatorioMensalController');
 
+    Route::get('/imprimir/lista', 'AlunoController@gerarPdf');
+
+
 });
