@@ -3,7 +3,7 @@
 @section('box')
     <div class="login-box">
         <div class="logo">
-            <p align="center"> <img src="/img/logoSGE.png" width="320" height="130"></p>
+            <p align="center"> <img src="/img/logoSGE.png"></p>
         </div>
         <div class="card">
             <div class="body">
