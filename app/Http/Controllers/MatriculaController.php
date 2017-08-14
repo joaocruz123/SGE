@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
     use App\Aluno;
     use App\Turma;
     use Illuminate\Http\Request;
+    use Infinety\Alerts\AlertServiceProvider;
+
 class MatriculaController extends Controller{
 
 
@@ -62,7 +64,7 @@ class MatriculaController extends Controller{
         $matricula->turma_id = $request->turma;
         $matricula->save();
 
-        return redirect()->route('matriculas.index')->with('message', 'Matricula realizada com sucesso.');
+        return redirect()->route('matriculas.index')->with( alert()->success('Matricula Realizada','O aluno foi matriculado'));
     }
     /**
      * Display the specified resource.
@@ -113,6 +115,6 @@ class MatriculaController extends Controller{
     {
         $matricula->delete();
 
-        return redirect('/matriculas');
+        return redirect('/matriculas')->with(alert()->error('Matricula Removida','O aluno não está mais matriculado.'));
     }
 }

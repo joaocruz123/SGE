@@ -7,37 +7,28 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-
-    <!-- Bootstrap Core Css -->
     <link href="/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Waves Effect Css -->
     <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
 
-    <!-- Animation Css -->
     <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- Morris Chart Css-->
     <link href="/plugins/morrisjs/morris.css" rel="stylesheet" />
 
-    <!-- Custom Css -->
     <link href="/css/style.css" rel="stylesheet">
 
-    <!-- Bootstrap Select Css -->
     <link href="/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
-    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="/css/themes/all-themes.css" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -159,7 +150,7 @@
                             &copy; 2017 <a href="{{url('/')}}">SGEBD</a> - Desenvolvido por João Cruz.
                         </div>
                         <div class="version">
-                            <b>Version: </b> 1.0.4
+                            <b>Version: </b> 1.5.0
                         </div>
                     </div>
                     <!-- #Footer -->
@@ -171,46 +162,48 @@
         @yield('content')
 
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
-    <!-- Jquery Core Js -->
-    <script src="/plugins/jquery/jquery.min.js"></script>
+        <script src="/js/app.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+        <script src="/plugins/jquery/jquery.min.js"></script>
 
-    <!-- Slimscroll Plugin Js -->
-    <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
-    <!-- Waves Effect Plugin Js -->
-    <script src="/plugins/node-waves/waves.js"></script>
+        <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-    <!-- Jquery CountTo Plugin Js -->
-    <script src="/plugins/jquery-countto/jquery.countTo.js"></script>
+        <script src="/plugins/node-waves/waves.js"></script>
 
+        <script src="/plugins/jquery-countto/jquery.countTo.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+        <script src="/plugins/momentjs/moment.js"></script>
 
-    <!-- Slimscroll Plugin Js -->
-    <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-    <!-- Waves Effect Plugin Js -->
-    <script src="/plugins/node-waves/waves.js"></script>
+        <script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
 
-    <!-- Moment Plugin Js -->
-    <script src="/plugins/momentjs/moment.js"></script>
+        <script src="/js/modals.js"></script>
 
-    <!-- Bootstrap Notify Plugin Js -->
-    <script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+        <script src="js/sweetalert.js"></script>
 
-    <script src="/js/modals.js"></script>
+        <script src="/js/admin.js"></script>
 
-    <!-- Custom Js -->
-    <script src="/js/admin.js"></script>
-    <script src="/js/pages/index.js"></script>
-    <script src="/js/notifications.js"></script>
-    <script src="/js/basic-form-elements.js"></script>
+        <script src="/js/pages/index.js"></script>
 
-</div>
+        <script src="/js/notifications.js"></script>
+
+        <script src="/js/basic-form-elements.js"></script>
+
+        <script src="/js/pages/forms/advanced-form-elements.js"></script>
+
+        <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+        <!-- Input Mask Plugin Js -->
+        <script src="/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+        <!-- Jquery Spinner Plugin Js -->
+        <script src="/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+
+        <!-- Demo Js -->
+        <script src="/js/demo.js"></script>
+
+        @include('Alerts::alerts')
+    </div>
+
 </body>
 </html>

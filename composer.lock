@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "89d396e0e2e3d5b80f670f49b3cac881",
+    "content-hash": "7c03932ec6d3d4319fddf98f14a6f633",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -269,6 +269,87 @@
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
             "time": "2017-02-16T02:40:40+00:00"
+        },
+        {
+            "name": "igorescobar/jquery-mask-plugin",
+            "version": "v1.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kamihouse/jQuery-Mask-Plugin.git",
+                "reference": "678a7df1f0bb275ce53f365b91af99d86850978d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kamihouse/jQuery-Mask-Plugin/zipball/678a7df1f0bb275ce53f365b91af99d86850978d",
+                "reference": "678a7df1f0bb275ce53f365b91af99d86850978d",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Escobar",
+                    "email": "blog@igorescobar.com",
+                    "homepage": "https://about.me/igorescobar",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Thiago Pereira Rosa",
+                    "email": "thiagor@engineer.com",
+                    "homepage": "http://coderi.com.br",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "A jQuery Plugin to make masks on form fields and html elements.",
+            "homepage": "https://github.com/igorescobar/jQuery-Mask-Plugin",
+            "keywords": [
+                "jquery",
+                "mask",
+                "plugin"
+            ],
+            "time": "2016-04-27T16:16:55+00:00"
+        },
+        {
+            "name": "infinety/alerts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Infinety/alerts.git",
+                "reference": "c2b4507e38deff27b28a31ff13f3349b0afe9122"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Infinety/alerts/zipball/c2b4507e38deff27b28a31ff13f3349b0afe9122",
+                "reference": "c2b4507e38deff27b28a31ff13f3349b0afe9122",
+                "shasum": ""
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Infinety\\Alerts\\": "/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Infinety",
+                    "email": "create@infinety.co.uk"
+                }
+            ],
+            "description": "A Sweet Alert package for Laravel 5>",
+            "keywords": [
+                "alert",
+                "laravel",
+                "laravel sweet alert",
+                "sweet-alert"
+            ],
+            "time": "2016-09-18 15:07:52"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3786,7 +3867,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "infinety/alerts": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

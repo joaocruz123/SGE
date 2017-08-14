@@ -7,6 +7,7 @@ use App\Aluno;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Infinety\Alerts\AlertServiceProvider;
 
 class AlunoController extends Controller {
 
@@ -66,7 +67,7 @@ class AlunoController extends Controller {
 
 		$aluno->save();
 
-		return redirect()->route('alunos.index')->with('message', 'Item created successfully.');
+		return redirect()->route('alunos.index')->with( alert()->success('Aluno Criado', 'Aluno criao e adicionado a grade de alunos!'));
 	}
 
 	/**
@@ -115,7 +116,7 @@ class AlunoController extends Controller {
 
 		$aluno->save();
 
-		return redirect()->route('alunos.index')->with('message', 'Item updated successfully.');
+		return redirect()->route('alunos.index')->with(alert()->success('Aluno Editado', 'Todos os dados foram atualizados!'));
 	}
 
 	/**
@@ -129,18 +130,13 @@ class AlunoController extends Controller {
 		$aluno = Aluno::findOrFail($id);
 		$aluno->delete();
 
-		return redirect()->route('alunos.index')->with('message', 'Item deleted successfully.');
+		return redirect()->route('alunos.index')->with(alert()->error('Aluno Deletado', 'O aluno foi deletado da lista.'));
 	}
 
-	public function gerarPdf(Request $request){
-        $keyword =$request->get('search');
+	public function gerarPdf(){
 
-        if(!empty($keyword)){
-            $alunos = Aluno::where('nome','LIKE',"%$keyword%")
-                ->get();
-        }else{
-            $alunos = Aluno::orderBy('nome', 'asc')->get();
-        }
+        $alunos = Aluno::orderBy('nome', 'asc')->get();
+
         if(count($alunos)==0){
             Session::flash('flash_message', 'Nenhum Aluno na lista de impressão!');
             return redirect('alunos');

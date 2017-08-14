@@ -162,11 +162,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Laralib\L5scaffold\GeneratorsServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
-
-
 
         /*
          * Package Service Providers...
@@ -177,6 +172,10 @@ return [
         /*
          * Application Service Providers...
          */
+        Laralib\L5scaffold\GeneratorsServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Infinety\Alerts\AlertServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\AuthServiceProvider::class,

@@ -10,7 +10,7 @@
                                 <div class="header">
                                     <h1><i class="material-icons">picture_in_picture</i> Matricular</h1>
                                 </div>
-                                <div class="body table-responsive">
+                                <div class="body">
                                     <form action="{{ route('matriculas.store') }}" method="POST">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="form-group">
@@ -22,7 +22,7 @@
                                             <br>
                                         @else
                                                 <label for="aluno">Aluno: </label>
-                                                <select class="form-control show-tick" name="aluno" id="aluno" required>
+                                                <select class="form-control show-tick" data-live-search="true" name="aluno" id="aluno" required>
 
 
                                                     @foreach($alunos as $aluno)
@@ -53,6 +53,7 @@
                                                 </select>
 
                                         @endif
+
                                         </div>
                                         <div class="footer">
                                         @if( ( count($turmas) < 1 ) || ( count($alunos) < 1 ) )

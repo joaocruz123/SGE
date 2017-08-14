@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Turma;
 use Illuminate\Http\Request;
+use Infinety\Alerts\AlertServiceProvider;
 
 class TurmaController extends Controller {
 
@@ -49,7 +50,7 @@ class TurmaController extends Controller {
 
 		$turma->save();
 
-		return redirect()->route('turmas.index')->with('message', 'Item created successfully.');
+		return redirect()->route('turmas.index')->with(alert()->success('A turma foi Criada','Turma adicionada a lista de turmas!'));
 	}
 
 	/**
@@ -93,7 +94,7 @@ class TurmaController extends Controller {
 
 		$turma->save();
 
-		return redirect()->route('turmas.index')->with('message', 'Item updated successfully.');
+		return redirect()->route('turmas.index')->with(alert()->success('Turma Editada', 'O nome da turma foi alterado.'));
 	}
 
 	/**
@@ -107,7 +108,7 @@ class TurmaController extends Controller {
 		$turma = Turma::findOrFail($id);
 		$turma->delete();
 
-		return redirect()->route('turmas.index')->with('message', 'Item deleted successfully.');
+		return redirect()->route('turmas.index')->with(alert()->erro('Turma Deletada', 'Turma deletada da lista.'));
 	}
 
 }

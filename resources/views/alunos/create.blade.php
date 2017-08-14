@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('error')
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -13,14 +12,16 @@
                                     <h1><i class="material-icons">add</i> Adicione um Aluno</h1>
                                 </div>
                                 <div class="body table-responsive">
+
                                     <form action="{{ route('alunos.store') }}" method="POST">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                                         <div class="col-sm-6">
                                         <div class="form-group @if($errors->has('nome')) has-error @endif">
                                             <label for="nome-field">Nome:</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
+                                                    <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}" required/>
                                                 </div>
                                             </div>
                                             @if($errors->has("nome"))
@@ -33,7 +34,7 @@
                                             <label for="nome-field">CPF:</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="number" id="cpf-field" name="cpf" class="form-control" value="{{ old("cpf") }}"/>
+                                                    <input type="text" id="cpf-field" name="cpf" class="form-control" value="{{ old("cpf") }}" required/>
                                                 </div>
                                             </div>
                                             @if($errors->has("cpf"))
@@ -46,7 +47,7 @@
                                             <label for="nome-field">Idade:</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="number" id="idade-field" name="idade" class="form-control" value="{{ old("idade") }}"/>
+                                                    <input type="number" id="idade-field" name="idade" class="form-control" value="{{ old("idade") }}" required/>
                                                 </div>
                                             </div>
                                             @if($errors->has("idade"))
@@ -59,7 +60,7 @@
                                                 <label for="nome-field">Telefone:</label>
                                                 <div class="form-group">
                                                     <div class="form-line">
-                                                        <input type="number" id="telefone-field" name="telefone" class="form-control" value="{{ old("telefone") }}"/>
+                                                        <input type="text" id="telefone" name="telefone" class="form-control" value="{{ old("telefone") }}" required/>
                                                     </div>
                                                 </div>
                                                 @if($errors->has("telefone"))
@@ -73,7 +74,7 @@
                                             <label for="nome-field">Sexo:</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <select class="form-control show-tick" id="sexo-field" name="sexo">
+                                                    <select class="form-control show-tick" id="sexo-field" name="sexo" required>
                                                         <option value="{{ old("sexo") }}">-- Selecione --</option>
                                                         <option value="Masculino">Masculino</option>
                                                         <option value="Feminino">Feminino</option>
@@ -90,13 +91,14 @@
                                             <label for="nome-field">Endereço:</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="endereco-field" name="endereco" class="form-control" value="{{ old("endereco") }}"/>
+                                                    <input type="text" id="endereco-field" name="endereco" class="form-control" value="{{ old("endereco") }}" required/>
                                                 </div>
                                             </div>
                                             @if($errors->has("endereco"))
                                                 <span class="help-block">{{ $errors->first("endereco") }}</span>
                                             @endif
                                         </div>
+
                                         </div>
                                         <div class="footer">
                                             <button type="submit" class="btn btn-primary">Criar</button>
@@ -104,6 +106,7 @@
                                         </div>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -112,3 +115,4 @@
         </div>
     </section>
 @endsection
+
