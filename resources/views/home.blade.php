@@ -16,7 +16,7 @@
                         </div>
                         <div class="content">
                             <div class="text">MATRICULADOS</div>
-                            <div class="number count-to" data-from="0" data-to="124" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="{{$totalMatriculas}}" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="content">
                             <div class="text">ALUNOS</div>
-                            <div class="number count-to" data-from="0" data-to="4" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="{{$totalAlunos}}" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="content">
                             <div class="text">PROFESSORES</div>
-                            <div class="number count-to" data-from="0" data-to="12" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="{{$totalProfessor}}" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>

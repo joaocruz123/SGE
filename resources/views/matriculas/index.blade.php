@@ -6,11 +6,10 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header">
-                            <a href="{{ route('matriculas.create') }}"><button type="button" class="btn bg-green waves-effect pull-right"><i class="material-icons">add</i> Nova Matricula</button></a>
-                            <h1><i class="material-icons">picture_in_picture</i> Matriculas</h1>
-                        </div>
-                        <div class="body table-responsive">
+                        <div class="body">
+                            <div class="pull-right">
+                                <a href="{{ route('matriculas.create') }}"><button type="button" class="btn bg-green waves-effect pull-right"><i class="material-icons">add</i> Nova Matricula</button></a>
+                            </div>
                             {!! Form::open(['method' => 'GET', 'url' => '/matriculas',  'role' => 'turma']) !!}
                             @if( count($turmas)<1 )
                                 <br>
@@ -19,7 +18,7 @@
                                 </h5>
                                 <br>
                             @else
-                                <div class="col-sm-5">
+                                <div class="col-sm-4">
                                     <div class="form-group">
                                         <div class="form-line">
                                             <select class="form-control" name="turma" id="turma" required>
@@ -34,21 +33,28 @@
                             @endif
                             <div class="col-sm-1">
 
-                            <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
-</div>
+                                <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
+                            </div>
                             {!! Form::close() !!}
                             {!! Form::open(['method' => 'GET', 'url' => '/matriculas',  'role' => 'aluno']) !!}
-                            <div class="col-sm-5">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input type="text" class="form-control" name="search" placeholder="Buscar Aluno..">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="search" placeholder="Buscar Aluno..">
+                                    </div>
                                 </div>
-                            </div>
 
                             </div>
                             <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
 
                             {!! Form::close() !!}
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h1><i class="material-icons">picture_in_picture</i> Matriculas</h1>
+                        </div>
+                        <div class="body table-responsive">
                         @if($matriculas->count())
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">

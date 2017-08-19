@@ -6,39 +6,46 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header">
+                        <div class="body">
                             <div class="pull-right">
                             @if(count($alunos)>0)
                                 {!! Form::open([
-                                    'method'=>'GET',
-                                    'url' => ['/imprimir/lista'],
-                                    'style' => 'display:inline',
-                                    'role' => 'search'
-                                ]) !!}
+                                        'method'=>'GET',
+                                        'url' => ['/imprimir/lista'],
+                                        'style' => 'display:inline',
+                                        'role' => 'search'
+                                        ]) !!}
 
                                 {!! Form::button('<i class="material-icons" aria-hidden="true">print</i> Imprimir todos os Alunos <span class="label label-default">'.'</span>', array(
-                                        'type' => 'submit',
-                                        'class' => 'btn bg-indigo waves-effect',
-                                        'title' => 'Imprimir',
-                                        'onclick'=>'return confirm("Deseja imprimir?")'
-                                )) !!}
+                                            'type' => 'submit',
+                                            'class' => 'btn bg-indigo waves-effect',
+                                            'title' => 'Imprimir',
+                                            'onclick'=>'return confirm("Deseja imprimir?")'
+                                            )) !!}
                                 {!! Form::close() !!}
                             @else
                                 <h3>Nenhum Aluno para Impressão</h3>
                             @endif
                             <a href="{{ route('alunos.create') }}"><button type="button" class="btn bg-green waves-effect "><i class="material-icons">add</i> Novo Aluno</button></a>
                             </div>
+                            {!! Form::open(['method' => 'GET', 'url' => '/alunos',  'role' => 'search']) !!}
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="search" placeholder="Buscar Aluno..">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+
                             <h1><i class="material-icons">person</i> Alunos</h1>
                         </div>
                         <div class="body table-responsive">
-                            {!! Form::open(['method' => 'GET', 'url' => '/alunos',  'role' => 'search']) !!}
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <div class="form-line">
-                            <input type="text" class="form-control" name="search" placeholder="Buscar Aluno..">
-                            </div></div></div>
-                            <button type="submit" class="btn-primary btn-circle"><i class="material-icons">search</i> </button>
-                            {!! Form::close() !!}
                             @if($alunos->count())
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">
