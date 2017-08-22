@@ -55,6 +55,90 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h3><i class="material-icons">attach_money</i> Ultimos Ganhos</h3>
+                                </div>
+                                <div class="body table-responsive">
+                                    @if($rendas->count())
+                                        <table class="table table-hover dashboard-task-infos">
+                                            <thead class="bg bg-cyan">
+                                            <tr>
+                                                <th>Categoria</th>
+                                                <th>Valor</th>
+                                                <th>Data</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($rendas as $renda)
+                                                <tr>
+                                                    <td>{{$renda->categoria_renda->nome or ''}}</td>
+                                                    <td>R$ {{$renda->valor}}</td>
+                                                    <td><strong>{{$renda->created_at}}</strong></td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                </div>
+                                @else
+                                    <h3 class="text-center alert alert-warning">Nenhuma Renda Cadastrada!</h3>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h3><i class="material-icons">warning</i> Ultimas Despesas</h3>
+                                </div>
+                                <div class="body table-responsive">
+                                    @if($despesas->count())
+                                        <table class="table table-hover dashboard-task-infos">
+                                            <thead class="bg bg-red">
+                                            <tr>
+                                                <th>Categoria</th>
+                                                <th>Valor</th>
+                                                <th>Data</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($despesas as $despesa)
+                                                <tr>
+                                                    <td>{{$despesa->categoria_despesa->nome or ''}}</td>
+                                                    <td>R$ {{$despesa->valor}}</td>
+                                                    <td><strong>{{$despesa->created_at}}</strong></td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                </div>
+                                @else
+                                    <h3 class="text-center alert alert-warning">Nenhuma Despesa Cadastrada!</h3>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h3><i class="material-icons">warning</i> Chart</h3>
+                                </div>
+                                <div class="body">
+                                    {!! $chart->render() !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection

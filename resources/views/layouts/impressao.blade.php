@@ -16,9 +16,7 @@
     </style>
 </head>
 <body class="wrapper">
-    <div class="logo">
-        <p align="center"></p>
-    </div>
+
 @yield('content')
 
 </body>

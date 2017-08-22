@@ -16,7 +16,7 @@ class RelatorioMensalController extends Controller
 
     public function index(Request $r)
     {
-        $from    = Carbon::parse(sprintf(
+        $from = Carbon::parse(sprintf(
             '%s-%s-01',
             $r->query('y', Carbon::now()->year),
             $r->query('m', Carbon::now()->month)
@@ -62,12 +62,6 @@ class RelatorioMensalController extends Controller
             }
         }
 
-        return view('relatorio_mensal.index', compact(
-            'exp_summary',
-            'inc_summary',
-            'exp_total',
-            'inc_total',
-            'profit'
-        ));
+        return view('relatorio_mensal.index', compact('exp_summary', 'inc_summary', 'exp_total', 'inc_total', 'profit', 'm'));
     }
 }

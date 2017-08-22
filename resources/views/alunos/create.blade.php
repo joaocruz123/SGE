@@ -7,6 +7,7 @@
                 <div class="col-md-12">
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
                             <div class="card">
                                 <div class="header">
                                     <h1><i class="material-icons">add</i> Adicione um Aluno</h1>
@@ -34,7 +35,7 @@
                                             <label for="nome-field">CPF:</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="cpf-field" name="cpf" class="form-control" value="{{ old("cpf") }}" required/>
+                                                    <input type="text" id="cpf-field" name="cpf" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="11" placeholder="000.000.000-00" class="form-control" value="{{ old("cpf") }}" required/>
                                                 </div>
                                             </div>
                                             @if($errors->has("cpf"))
@@ -47,7 +48,7 @@
                                             <label for="nome-field">Idade:</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="number" id="idade-field" name="idade" class="form-control" value="{{ old("idade") }}" required/>
+                                                    <input type="text" id="idade-field" maxlength="2"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" name="idade" class="form-control" value="{{ old("idade") }}" required/>
                                                 </div>
                                             </div>
                                             @if($errors->has("idade"))
@@ -60,7 +61,7 @@
                                                 <label for="nome-field">Telefone:</label>
                                                 <div class="form-group">
                                                     <div class="form-line">
-                                                        <input type="text" id="telefone" name="telefone" class="form-control" value="{{ old("telefone") }}" required/>
+                                                        <input type="tel" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" id="phone" name="telefone" class="form-control" maxlength="11" placeholder="(00) 0000-0000" value="{{ old("telefone") }}" required/>
                                                     </div>
                                                 </div>
                                                 @if($errors->has("telefone"))

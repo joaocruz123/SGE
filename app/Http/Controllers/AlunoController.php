@@ -4,8 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Aluno;
-use Barryvdh\DomPDF\PDF;
+use \PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use Infinety\Alerts\AlertServiceProvider;
 
@@ -141,10 +142,17 @@ class AlunoController extends Controller {
             Session::flash('flash_message', 'Nenhum Aluno na lista de impressão!');
             return redirect('alunos');
         }
-        $pdf = app('dompdf.wrapper');
+
+        /*$pdf = app('snappy.pdf.wrapper');
+
         $pdf->loadView('alunos.pdf', compact('alunos') );
 
+        return $pdf->download(md5( date('Y-m-d H:i:s') ).'.pdf');*/
+
+        $pdf = PDF::loadView('alunos.pdf', compact('alunos'));
+
         return $pdf->download(md5( date('Y-m-d H:i:s') ).'.pdf');
+
     }
 
 }

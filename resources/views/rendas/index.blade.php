@@ -12,7 +12,7 @@
                         </div>
 
                         <div class="body table-responsive">
-                            @if($rendas->count())
+                                @if($rendas->count())
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">
                                     <tr>
@@ -67,9 +67,10 @@
                         @else
                             <h3 class="text-center alert alert-info">Nenhuma Receita!</h3>
                         @endif
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
     </section>
 @endsection

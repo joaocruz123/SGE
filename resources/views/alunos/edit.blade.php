@@ -32,7 +32,7 @@
                                     <label for="nome-field">CPF:</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number" id="cpf-field" name="cpf" class="form-control" value="{{ is_null(old("cpf")) ? $aluno->cpf : old("cpf") }}"/>
+                                            <input type="text" id="cpf-field" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="11" placeholder="000.000.000-00" name="cpf" class="form-control" value="{{ is_null(old("cpf")) ? $aluno->cpf : old("cpf") }}"/>
                                         </div>
                                     </div>
                                     @if($errors->has("nome"))
@@ -45,7 +45,7 @@
                                     <label for="nome-field">Idade:</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number" id="idade-field" name="idade" class="form-control" value="{{ is_null(old("idade")) ? $aluno->idade : old("idade") }}"/>
+                                            <input type="text" id="idade-field" maxlength="2"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" name="idade" class="form-control" value="{{ is_null(old("idade")) ? $aluno->idade : old("idade") }}"/>
                                         </div>
                                     </div>
                                     @if($errors->has("idade"))
@@ -75,7 +75,7 @@
                                     <label for="nome-field">Telefone:</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number" id="telefone-field" name="telefone" class="form-control" value="{{ is_null(old("telefone")) ? $aluno->telefone : old("telefone") }}"/>
+                                            <input type="tel" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="11" id="telefone-field" name="telefone" class="form-control" value="{{ is_null(old("telefone")) ? $aluno->telefone : old("telefone") }}"/>
                                         </div>
                                     </div>
                                     @if($errors->has("idade"))

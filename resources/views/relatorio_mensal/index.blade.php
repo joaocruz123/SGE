@@ -27,65 +27,85 @@
                                     {!! Form::submit('Selecionar Mês',['class' => 'btn btn-primary']) !!}
                                 </div>
                             </div>
+                            {!! Form::close() !!}
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4>Relatório</h4>
-                            </div>
-    {!! Form::close() !!}
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-4">
-                <table class="table table-bordered table-striped">
-                    <tr>
-                        <th>Recitas</th>
-                        <td>{{ number_format($inc_total, 2) }}</td>
-                    </tr>
-                    <tr>
-                        <th>Despesas</th>
-                        <td>{{ number_format($exp_total, 2) }}</td>
-                    </tr>
-                    <tr>
-                        <th>Lucro</th>
-                        <td>{{ number_format($profit, 2) }}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-md-4">
-                <table class="table table-bordered table-striped">
-                    <tr>
-                        <th>Categorias de Receitas</th>
-                        <th>{{ number_format($inc_total, 2) }}</th>
-                    </tr>
-                    @foreach($inc_summary as $inc)
-                        <tr>
-                            <th>{{ $inc['nome'] }}</th>
-                            <td>{{ number_format($inc['valor'], 2) }}</td>
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
-            <div class="col-md-4">
-                <table class="table table-bordered table-striped">
-                    <tr>
-                        <th>Categorias de Despesas</th>
-                        <th>{{ number_format($exp_total, 2) }}</th>
-                    </tr>
-                    @foreach($exp_summary as $inc)
-                        <tr>
-                            <th>{{ $inc['nome'] }}</th>
-                            <td>{{ number_format($inc['valor'], 2) }}</td>
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
-        </div>
-        </div>
-    </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h3>Relatório Mensal</h3>
+                        </div>
+                        <div class="body table-responsive">
+                            <p align="center"> <h4>Relatório Total</h4></p>
+                            <table class="table table-bordered">
+                                <thead class="bg-light-green">
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>Recitas</th>
+                                    <td>{{ number_format($inc_total, 2) }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Despesas</th>
+                                    <td>{{ number_format($exp_total, 2) }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Lucro</th>
+                                    <td>{{ number_format($profit, 2) }}</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="body table-responsive">
+                            <p align="center"> <h4>Relatório de Rendas</h4></p>
+                            <table class="table table-bordered">
+                                <thead class="bg-light-green">
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                </thead>
+                                <tbody>
+
+                                    @foreach($inc_summary as $inc)
+                                        <tr>
+                                            <th>{{ $inc['nome'] }}</th>
+                                            <td>{{ number_format($inc['valor'], 2) }}</td>
+                                        </tr>
+                                    @endforeach
+
+                                <tr>
+                                    <th>Total de Receitas no Mês</th>
+                                    <td>{{ number_format($exp_total, 2) }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="body table-responsive">
+                            <p align="center"> <h4>Relatório de Despesas</h4></p>
+                            <table class="table table-bordered">
+                                <thead class="bg-light-green">
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                </thead>
+                                <tbody>
+                                @foreach($exp_summary as $inc)
+                                    <tr>
+                                        <th>{{ $inc['nome'] }}</th>
+                                        <td>{{ number_format($inc['valor'], 2) }}</td>
+                                    </tr>
+                                @endforeach
+                                <tr>
+                                <th>Total de Despesas no Mês</th>
+                                <td>{{ number_format($exp_total, 2) }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
 

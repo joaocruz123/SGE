@@ -10,25 +10,26 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-    <link href="/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
-    <link href="/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="{{asset('/plugins/node-waves/waves.css')}}" rel="stylesheet" />
 
-    <link href="/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="{{asset('/plugins/animate-css/animate.css')}}" rel="stylesheet" />
 
-    <link href="/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <link href="{{asset('/css/style.css')}}" rel="stylesheet">
 
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="{{asset('/plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
 
-    <link href="/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="{{asset('/css/themes/all-themes.css')}}" rel="stylesheet" />
 
-    <link href="/css/themes/all-themes.css" rel="stylesheet" />
-
-    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+
+    {!! Charts::assets() !!}
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -95,7 +96,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/alunos">
+                                <a href="{{ url('/alunos') }}">
                                     <i class="material-icons">person</i>
                                     <span>Alunos</span>
                                 </a>
@@ -162,47 +163,43 @@
         @yield('content')
 
 
-        <script src="/js/app.js"></script>
+        <script src="{{asset('/js/app.js')}}"></script>
 
-        <script src="/plugins/jquery/jquery.min.js"></script>
+        <script src="{{asset('/plugins/jquery/jquery.min.js')}}"></script>
 
-        <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+        <script src="{{asset('/plugins/bootstrap-select/js/bootstrap-select.js')}}"></script>
 
-        <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="{{asset('/plugins/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
 
-        <script src="/plugins/node-waves/waves.js"></script>
+        <script src="{{asset('/plugins/node-waves/waves.js')}}"></script>
 
-        <script src="/plugins/jquery-countto/jquery.countTo.js"></script>
+        <script src="{{asset('/plugins/jquery-countto/jquery.countTo.js')}}"></script>
 
-        <script src="/plugins/momentjs/moment.js"></script>
+        <script src="{{asset('/plugins/momentjs/moment.js')}}"></script>
 
-        <script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+        <script src="{{asset('/plugins/bootstrap-notify/bootstrap-notify.js')}}"></script>
 
-        <script src="/js/modals.js"></script>
+        <script src="{{asset('/js/modals.js')}}"></script>
 
-        <script src="js/sweetalert.js"></script>
+        <script src="{{asset('js/sweetalert.js')}}"></script>
 
-        <script src="/js/admin.js"></script>
+        <script src="{{asset('/js/admin.js')}}"></script>
 
-        <script src="/js/pages/index.js"></script>
+        <script src="{{asset('/js/pages/index.js')}}"></script>
 
-        <script src="/js/notifications.js"></script>
+        <script src="{{asset('/js/notifications.js')}}"></script>
 
-        <script src="/js/basic-form-elements.js"></script>
-
-        <script src="/js/pages/forms/advanced-form-elements.js"></script>
-
-        <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-        <!-- Input Mask Plugin Js -->
-        <script src="/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+        <script src="{{asset('/js/basic-form-elements.js')}}"></script>
 
         <!-- Jquery Spinner Plugin Js -->
-        <script src="/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+        <script src="{{asset('/plugins/jquery-spinner/js/jquery.spinner.js')}}"></script>
 
         <!-- Demo Js -->
-        <script src="/js/demo.js"></script>
+        <script src="{{asset('/js/demo.js')}}"></script>
+
 
         @include('Alerts::alerts')
+
     </div>
 
 </body>

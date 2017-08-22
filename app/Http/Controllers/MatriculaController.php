@@ -34,6 +34,7 @@ class MatriculaController extends Controller{
         {
             $matriculas = Matricula::with(['aluno', 'turma'])->get();
         }
+
         $turmas=Turma::all();
 
         return view('matriculas.index', compact('matriculas', 'turmas'));

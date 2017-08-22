@@ -13,7 +13,6 @@
                                         'method'=>'GET',
                                         'url' => ['/imprimir/lista'],
                                         'style' => 'display:inline',
-                                        'role' => 'search'
                                         ]) !!}
 
                                 {!! Form::button('<i class="material-icons" aria-hidden="true">print</i> Imprimir todos os Alunos <span class="label label-default">'.'</span>', array(
@@ -23,8 +22,6 @@
                                             'onclick'=>'return confirm("Deseja imprimir?")'
                                             )) !!}
                                 {!! Form::close() !!}
-                            @else
-                                <h3>Nenhum Aluno para Impressão</h3>
                             @endif
                             <a href="{{ route('alunos.create') }}"><button type="button" class="btn bg-green waves-effect "><i class="material-icons">add</i> Novo Aluno</button></a>
                             </div>
