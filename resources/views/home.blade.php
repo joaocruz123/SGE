@@ -61,7 +61,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="card">
                                 <div class="header">
-                                    <h3><i class="material-icons">attach_money</i> Ultimos Ganhos</h3>
+                                    <h4><i class="material-icons">attach_money</i> Ultimos Ganhos</h4>
                                 </div>
                                 <div class="body table-responsive">
                                     @if($rendas->count())
@@ -92,7 +92,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="card">
                                 <div class="header">
-                                    <h3><i class="material-icons">warning</i> Ultimas Despesas</h3>
+                                    <h4><i class="material-icons">warning</i> Ultimas Despesas</h4>
                                 </div>
                                 <div class="body table-responsive">
                                     @if($despesas->count())
@@ -123,13 +123,14 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="card">
                                 <div class="header">
-                                    <h3><i class="material-icons">warning</i> Chart</h3>
+                                    <h4><i class="material-icons">warning</i> Chart</h4>
                                 </div>
                                 <div class="body">
                                     {!! $chart->render() !!}
@@ -139,6 +140,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 @endsection

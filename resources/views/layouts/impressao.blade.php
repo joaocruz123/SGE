@@ -16,7 +16,14 @@
     </style>
 </head>
 <body class="wrapper">
-
+<div class="row">
+    <div class="col-xs-12">
+        <p align="center"><img src="{{public_path('img/ipad.jpg')}}" width="110" height="auto"/></p>
+        <h4 style="text-align: center;"><strong>IPAD</strong></h4>
+        <h5 style="text-align: center;"><strong>Igreja Pentecostal Assembleia de Deus</strong></h5>
+        <h5 style="text-align: center;"><strong>Sistema de Gestão de Escola Bíblica Dominical</strong></h5>
+    </div>
+</div>
 @yield('content')
 
 </body>

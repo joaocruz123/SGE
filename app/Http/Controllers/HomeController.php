@@ -41,12 +41,12 @@ class HomeController extends Controller
 
         /*$matriculas = Matricula::with(['aluno', 'turma'])->orderBy('id','desc')->take(3)->get();*/
 
-        $chart = Charts::database(Despesa::all(),'pie', 'highcharts')
+        $chart = Charts::database(Renda::all(),'line', 'highcharts')
             // Use this if you want to use your own template
-            ->setTitle('My nice chart')
+            ->setTitle('Receitas dos Ultimos 6 mêses')
             ->setElementLabel("Total")
             ->setResponsive(true)
-            ->lastByMonth(6, true);
+            ->groupByMonth('2017', true);
 
         return view('home', compact('totalMatriculas','totalAlunos', 'totalProfessor', 'rendas', 'despesas','chart'));
     }

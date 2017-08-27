@@ -8,6 +8,34 @@
                     <div class="card">
                         <div class="header">
                             <h1><i class="material-icons">trending_up</i> Relatório Mensal</h1>
+                                {!! Form::open([
+                                        'method'=>'GET',
+                                        'url' => ['/imprimir/relatorio'],
+                                        'style' => 'display:inline',
+                                        ]) !!}
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="col-xs-1 col-md-1 form-group">
+                                            {!! Form::label('year','Ano',['class' => 'control-label']) !!}
+                                            {!! Form::select('y', array_combine(range(date("Y"), 1900), range(date("Y"), 1900)), old('y', Request::get('y', date('Y'))), ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="col-xs-2 col-md-2 form-group">
+                                            {!! Form::label('month','Mês',['class' => 'control-label']) !!}
+                                            {!! Form::select('m', cal_info(0)['months'], old('m', Request::get('m', date('m'))), ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {!! Form::button('<i class="material-icons" aria-hidden="true">print</i> Imprimir<span class="label label-default">'.'</span>', array(
+                                            'type' => 'submit',
+                                            'class' => 'btn bg-indigo waves-effect',
+                                            'title' => 'Imprimir',
+                                            'onclick'=>'return confirm("Deseja imprimir?")'
+                                            )) !!}
+                                {!! Form::close() !!}
+
                             {!! Form::open(['method' => 'get']) !!}
                             <div class="row">
                                 <div class="col-sm-6">

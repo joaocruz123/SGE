@@ -84,78 +84,8 @@
                 </div>
                 </ul>
                 <!-- Left Sidebar -->
-                <aside id="leftsidebar" class="sidebar">
-                    <!-- Menu -->
-                    <div class="menu">
-                        <ul class="list">
-                            <li class="header">MENU DE NAVEGAÇÃO</li>
-                            <li>
-                                <a href="{{ url('/') }}">
-                                    <i class="material-icons">home</i>
-                                    <span>Painel Principal</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/alunos') }}">
-                                    <i class="material-icons">person</i>
-                                    <span>Alunos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{url('/turmas')}}">
-                                    <i class="material-icons">class</i>
-                                    <span>Turmas</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{url('/professors')}}">
-                                    <i class="material-icons">school</i>
-                                    <span>Professores</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{url('/matriculas')}}">
-                                    <i class="material-icons">picture_in_picture</i>
-                                    <span>Matriculas</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <i class="material-icons">credit_card</i>
-                                    <span>Gerenciamento de Despesas</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="{{url('/categorias_despesas')}}">Categorias de Despesas</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('/categorias_rendas')}}">Categorias de Rendas</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('/despesas')}}">Despesas</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('/rendas')}}">Rendas</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('/relatorio_mensal')}}">Relatório Mensal</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- #Menu -->
-                    <!-- Footer -->
-                    <div class="legal">
-                        <div class="copyright">
-                            &copy; 2017 <a href="{{url('/')}}">SGEBD</a> - Desenvolvido por João Cruz.
-                        </div>
-                        <div class="version">
-                            <b>Version: </b> 1.5.0
-                        </div>
-                    </div>
-                    <!-- #Footer -->
-                </aside>
+                    @include('layouts.menu')
+
                 @endif
             </div>
             </div>

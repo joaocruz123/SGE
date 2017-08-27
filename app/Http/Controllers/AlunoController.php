@@ -151,7 +151,7 @@ class AlunoController extends Controller {
 
         $pdf = PDF::loadView('alunos.pdf', compact('alunos'));
 
-        return $pdf->download(md5( date('Y-m-d H:i:s') ).'.pdf');
+        return $pdf->stream(md5( date('Y-m-d H:i:s') ).'.pdf');
 
     }
 

@@ -50,14 +50,6 @@
                         <button class="btn btn-block bg-blue waves-effect" type="submit">Login</button>
                     </div>
                 </div>
-                <div class="row m-t-15 m-b--20">
-                    <div class="col-xs-6">
-                        <a href="{{url('/register')}}">Registre-se</a>
-                    </div>
-                    <div class="col-xs-6 align-right">
-                        <a href="{{ url('/password/reset') }}">Esqueceu sua senha?</a>
-                    </div>
-                </div>
             </form>
         </div>
     </div>

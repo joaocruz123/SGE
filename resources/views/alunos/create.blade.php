@@ -12,8 +12,7 @@
                                 <div class="header">
                                     <h1><i class="material-icons">add</i> Adicione um Aluno</h1>
                                 </div>
-                                <div class="body table-responsive">
-
+                                <div class="body">
                                     <form action="{{ route('alunos.store') }}" method="POST">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

@@ -26,7 +26,7 @@
                             <a href="{{ route('alunos.create') }}"><button type="button" class="btn bg-green waves-effect "><i class="material-icons">add</i> Novo Aluno</button></a>
                             </div>
                             {!! Form::open(['method' => 'GET', 'url' => '/alunos',  'role' => 'search']) !!}
-                            <div class="col-sm-7">
+                            <div class="col-sm-4">
                                 <div class="form-group">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="search" placeholder="Buscar Aluno..">
@@ -48,9 +48,9 @@
                                     <thead class="bg-blue-grey">
                                     <tr>
                                         <th>#</th>
-                                        <th>NOME</th>
-                                        <th>DATA DE CADASTRO</th>
-                                        <th>AÇÃO</th>
+                                        <th>Nome</th>
+                                        <th>Data de Cadastro</th>
+                                        <th>Ação</th>
                                     </tr>
                                     </thead>
                                     <tbody>
