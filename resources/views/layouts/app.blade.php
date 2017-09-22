@@ -127,6 +127,9 @@
         <!-- Demo Js -->
         <script src="{{asset('/js/demo.js')}}"></script>
 
+        <script src="{{asset('/js/pages/widgets/infobox/infobox-4.js')}}"></script>
+
+
 
         @include('Alerts::alerts')
 

@@ -118,7 +118,7 @@ class RelatorioMensalController extends Controller
 
             $pdf = PDF::loadView('relatorio_mensal.pdf', compact('exp_summary', 'inc_summary', 'exp_total', 'inc_total', 'profit', 'm'));
 
-            return $pdf->download(md5(date('Y-m-d H:i:s')) . '.pdf');
+            return $pdf->stream(md5(date('Y-m-d H:i:s')) . '.pdf');
 
     }
 }

@@ -4,13 +4,16 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
+                <div class="row">
+                    <h3><p align="center"> Relatório Mensal Financeiro</p></h3>
+                </div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h4>Relatório Mensal</h4>
+                        <p align="center"> <h4>Relatório Total</h4></p>
                     </div>
                     <div class="painel-body">
-                        <p align="center"> <h4>Relatório Total</h4></p>
-                        <table class="table table-bordered">
+                        <div class="page-break" style="page-break-after: always;">
+                        <table class="table table-striped">
                             <thead class="bg-light-green">
                             <th>Descrição</th>
                             <th>Valor</th>
@@ -31,10 +34,16 @@
 
                             </tbody>
                         </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <p align="center"> <h4>Relatório de Rendas</h4></p>
                     </div>
                     <div class="painel-body">
-                        <p align="center"> <h4>Relatório de Rendas</h4></p>
-                        <table class="table table-bordered">
+                        <div class="page-break" style="page-break-after: always;">
+                        <table class="table table-striped">
                             <thead class="bg-light-green">
                             <th>Descrição</th>
                             <th>Valor</th>
@@ -54,10 +63,16 @@
                             </tr>
                             </tbody>
                         </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <p align="center"> <h4>Relatório de Despesas</h4></p>
                     </div>
                     <div class="painel-body">
-                        <p align="center"> <h4>Relatório de Despesas</h4></p>
-                        <table class="table table-bordered">
+                        <div class="page-break" style="page-break-after: always;">
+                        <table class="table table-striped">
                             <thead class="bg-light-green">
                             <th>Descrição</th>
                             <th>Valor</th>
@@ -75,9 +90,10 @@
                             </tr>
                             </tbody>
                         </table>
+                            </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
-    </div>
 @endsection

@@ -56,7 +56,7 @@
 
 													-</span>
 											</td>
-											<td class="mailbox-messages mailbox-name"><a href="javascript:void(0);"  style="display:block"><i class="fa fa-user"></i>&nbsp;&nbsp;{{ $usuario->name  }}</a></td>
+											<td class="mailbox-messages mailbox-name"><strong>&nbsp{{ $usuario->name  }}</strong></td>
 											<td>{{ $usuario->email }}</td>
 											<td>
 												<a href="{{ url('/form_editar_usuario/'.$usuario->id) }}" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>

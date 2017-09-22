@@ -27,7 +27,7 @@
                                         <tr>
                                             <td>{{$despesa->id}}</td>
                                             <td>{{$despesa->categoria_despesa->nome or ''}}</td>
-                                            <td>R$ {{$despesa->valor}},00</td>
+                                            <td>R$ {{$despesa->valor}}</td>
                                             <td>
                                                 <a href="{{ route('despesas.edit', $despesa->id) }}" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>
                                                 <button type="button" title="Visualizar" class="btn btn-primary btn-circle waves-effect" data-toggle="modal" data-target="#modal-{{ $despesa->id }}"><i class="material-icons">visibility</i></button>

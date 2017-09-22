@@ -64,7 +64,7 @@
                         <a href="{{url('/relatorio_mensal')}}">Financeiro</a>
                     </li>
                     <li>
-                        <a href="{{url('/relatorio_mensal')}}">Alunos</a>
+                        <a href="{{url('/aluno_relatorio')}}">Alunos</a>
                     </li>
                     <li>
                         <a href="{{url('/relatorio_mensal')}}">Matriculas</a>

@@ -15,16 +15,18 @@
                         <div class="body table-responsive">
                             <form action="{{ route('turmas.store') }}" method="POST">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <div class="col-sm-12">
                                 <div class="form-group @if($errors->has('nome')) has-error @endif">
                                     <label for="nome-field">Nome:</label>
                                     <div class="form-group">
                                              <div class="form-line">
-                                                <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}"/>
+                                                <input type="text" id="nome-field" name="nome" class="form-control" value="{{ old("nome") }}" required/>
                                              </div>
                                          </div>
                                     @if($errors->has("nome"))
                                         <span class="help-block">{{ $errors->first("nome") }}</span>
                                     @endif
+                                </div>
                                 </div>
                                 <br/>
                                 <div class="foooter">

@@ -53,5 +53,8 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::get('/imprimir/relatorio', 'RelatorioMensalController@gerarPdf');
 
+    Route::get('/imprimir/aluno', 'AlunoController@gerarPdf');
+
+    Route::resource('aluno_relatorio', 'AlunoController@relatorioAluno');
 
 });

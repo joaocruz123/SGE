@@ -73,7 +73,7 @@
 											<tr role="row" class="odd" id="filaR_{{  $rol->id }}">
 												<td>{{ $rol->id }}</td>
 												<td><span class="label label-default">{{ $rol->name or "Ninguno" }}</span></td>
-												<td class="mailbox-messages mailbox-name"><a href="javascript:void(0);" style="display:block"><i class="fa fa-user"></i>&nbsp;&nbsp;{{ $rol->slug  }}</a></td>
+												<td class="mailbox-messages mailbox-name"><strong>&nbsp;&nbsp;{{ $rol->slug  }}</strong></td>
 												<td>{{ $rol->description }}</td>
 												<td>
 													<button type="button"  class="btn  btn-danger btn-circle" onclick="borrar_rol({{ $rol->id }});"   ><i class="material-icons">close</i> </button>

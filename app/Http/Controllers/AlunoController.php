@@ -29,8 +29,8 @@ class AlunoController extends Controller {
         $perPage =10;
 
         if(!empty($keyword)){
-            $alunos = Aluno::where('nome','LIKE',"%$keyword%")
-                ->orWhere('endereco', 'LIKE', "%$keyword%")
+            $alunos = Aluno::where('nome','LIKE',"$keyword%")
+                ->orWhere('endereco', 'LIKE', "$keyword%")
                 ->paginate($perPage);
         }else{
             $alunos = Aluno::orderBy('nome', 'asc')->paginate($perPage);
@@ -134,11 +134,31 @@ class AlunoController extends Controller {
 		return redirect()->route('alunos.index')->with(alert()->error('Aluno Deletado', 'O aluno foi deletado da lista.'));
 	}
 
-	public function gerarPdf(){
+	public function relatorioAluno(){
 
         $alunos = Aluno::orderBy('nome', 'asc')->get();
 
+	    return view('relatorios.aluno_relatorio', compact('alunos'));
+    }
+
+	public function gerarPdf(Request $request){
+
+        $keyword = $request->get('search');
+
+        if (!empty($keyword)) {
+            $alunos = Aluno::where('nome', 'LIKE', "$keyword%")
+                ->orWhere('cpf', 'LIKE', "$keyword%")
+                ->orWhere('created_at', 'LIKE', "%$keyword%")
+                ->orderBy('nome', 'asc')
+                ->get();
+        }
+        else
+        {
+            $alunos = Aluno::orderBy('nome', 'asc')->get();
+        }
+
         if(count($alunos)==0){
+
             Session::flash('flash_message', 'Nenhum Aluno na lista de impressão!');
             return redirect('alunos');
         }

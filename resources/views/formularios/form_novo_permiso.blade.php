@@ -118,7 +118,7 @@
 												<tr role="row" class="odd" id="filaP_{{ $permiso->id }}">
 													<td>{{ $permiso->id }}</td>
 													<td><span class="label label-default">{{ $permiso->name or "Ninguno" }}</span></td>
-													<td class="mailbox-messages mailbox-name"><a href="javascript:void(0);" style="display:block"></i>&nbsp;&nbsp;{{ $permiso->slug  }}</a></td>
+													<td class="mailbox-messages mailbox-name" style="color: red">&nbsp;<strong>{{ $permiso->slug  }}</strong></td>
 													<td>{{ $permiso->description }}</td>
 													<td>
 														<button type="button"  class="btn  btn-danger btn-xs"  onclick="borrar_permiso({{ $rol->id }},{{ $permiso->id }});"  ><i class="fa fa-fw fa-remove"></i></button>

@@ -7,6 +7,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>SGEBD - Sistema de Gestão de Escola Bíblica</title>
     <style>
+        thead { display: table-header-group }
+        tfoot { display: table-row-group }
+        tr { page-break-inside: avoid }
         /*!
   * Bootstrap v3.3.6 (http://getbootstrap.com)
   * Copyright 2011-2015 Twitter, Inc.
@@ -24,8 +27,9 @@
         <h5 style="text-align: center;"><strong>Sistema de Gestão de Escola Bíblica Dominical</strong></h5>
     </div>
 </div>
+<br/>
 @yield('content')
-
+<br/>
 </body>
 <footer>
     <div class="container">

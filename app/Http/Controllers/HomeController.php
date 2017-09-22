@@ -7,6 +7,7 @@ use App\Despesa;
 use App\Matricula;
 use App\Professor;
 use App\Renda;
+use App\User;
 use ConsoleTVs\Charts\Charts;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,7 @@ class HomeController extends Controller
         $totalMatriculas = Matricula::count();
         $totalAlunos = Aluno::count();
         $totalProfessor = Professor::count();
+        $totalUsuarios = User::count();
 
         $rendas = Renda::with(['categoria_renda'])->orderBy('id','desc')->take(4)->get();
 
@@ -48,7 +50,7 @@ class HomeController extends Controller
             ->setResponsive(true)
             ->groupByMonth('2017', true);
 
-        return view('home', compact('totalMatriculas','totalAlunos', 'totalProfessor', 'rendas', 'despesas','chart'));
+        return view('home', compact('totalMatriculas','totalAlunos', 'totalProfessor', 'totalUsuarios', 'rendas', 'despesas','chart'));
     }
 
 }

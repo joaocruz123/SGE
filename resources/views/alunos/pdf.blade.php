@@ -9,8 +9,8 @@
                         <h4>Lista de Alunos</h4>
                     </div>
                     <div class="panel-body">
-                        <div>
-                            <table class="table table-borderless">
+                        <div class="page-break" style="page-break-after: always;">
+                            <table class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th>Nome completo</th>

@@ -15,7 +15,7 @@
                                 <div class="body table-responsive">
                                     <form action="{{ route('professors.store') }}" method="POST">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+                                        <div class="col-sm-6">
                                         <div class="form-group @if($errors->has('nome')) has-error @endif">
                                             <label for="nome-field">Nome:</label>
                                             <div class="form-group">
@@ -27,17 +27,21 @@
                                                 <span class="help-block">{{ $errors->first("nome") }}</span>
                                             @endif
                                         </div>
+                                        </div>
+                                        <div class="col-sm-6">
                                         <div class="form-group @if($errors->has('cpf')) has-error @endif">
                                             <label for="nome-field">CPF:</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="number" id="cpf-field" name="cpf" class="form-control" value="{{ old("cpf") }}"/>
+                                                    <input  type="text" id="cpf-field" name="cpf" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="11" placeholder="000.000.000-00" class="form-control" value="{{ old("cpf") }}" required/>
                                                 </div>
                                             </div>
                                             @if($errors->has("cpf"))
                                                 <span class="help-block">{{ $errors->first("cpf") }}</span>
                                             @endif
                                         </div>
+                                        </div>
+                                        <div class="col-sm-6">
                                         <div class="form-group @if($errors->has('sexo')) has-error @endif">
                                             <label for="nome-field">Sexo:</label>
                                             <div class="form-group">
@@ -53,6 +57,21 @@
                                                 <span class="help-block">{{ $errors->first("sexo") }}</span>
                                             @endif
                                         </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                        <div class="form-group @if($errors->has('telefone')) has-error @endif">
+                                            <label for="nome-field">Telefone:</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="tel" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" id="phone" name="telefone" class="form-control" maxlength="11" placeholder="(00) 0000-0000" class="form-control" value="{{ old("telefone") }}" required/>
+                                                </div>
+                                            </div>
+                                            @if($errors->has("telefone"))
+                                                <span class="help-block">{{ $errors->first("telefone") }}</span>
+                                            @endif
+                                        </div>
+                                            </div>
+                                        <div class="col-sm-12">
                                         <div class="form-group @if($errors->has('endereco')) has-error @endif">
                                             <label for="nome-field">Endereço:</label>
                                             <div class="form-group">
@@ -64,17 +83,8 @@
                                                 <span class="help-block">{{ $errors->first("endereco") }}</span>
                                             @endif
                                         </div>
-                                        <div class="form-group @if($errors->has('telefone')) has-error @endif">
-                                            <label for="nome-field">Telefone:</label>
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="number" id="telefone-field" name="telefone" class="form-control" value="{{ old("telefone") }}"/>
-                                                </div>
                                             </div>
-                                            @if($errors->has("telefone"))
-                                                <span class="help-block">{{ $errors->first("telefone") }}</span>
-                                            @endif
-                                        </div>
+                                        <br>
                                         <button type="submit" class="btn btn-primary">Criar</button>
                                         <a class="btn btn-link pull-right" href="{{ route('professors.index') }}"><i class="material-icons">arrow_back</i></a>
                                     </form>
