@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\Cordenador;
 use App\Despesa;
 use App\Matricula;
 use App\Professor;
 use App\Renda;
+use App\Studant;
 use App\User;
 use ConsoleTVs\Charts\Charts;
 use Illuminate\Http\Request;
@@ -30,8 +32,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $totalMatriculas = Matricula::count();
-        $totalAlunos = Aluno::count();
+        $totalCordenador = Cordenador::count();
+        $totalAlunos = Studant::count();
         $totalProfessor = Professor::count();
         $totalUsuarios = User::count();
 
@@ -50,7 +52,7 @@ class HomeController extends Controller
             ->setResponsive(true)
             ->groupByMonth('2017', true);
 
-        return view('home', compact('totalMatriculas','totalAlunos', 'totalProfessor', 'totalUsuarios', 'rendas', 'despesas','chart'));
+        return view('home', compact('totalCordenador','totalAlunos', 'totalProfessor', 'totalUsuarios', 'rendas', 'despesas','chart'));
     }
 
 }

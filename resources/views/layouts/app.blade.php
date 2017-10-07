@@ -129,7 +129,7 @@
 
         <script src="{{asset('/js/pages/widgets/infobox/infobox-4.js')}}"></script>
 
-
+        <script src="{{ asset('/js/bootstrap-checkbox-radio-switch.js') }}"></script>
 
         @include('Alerts::alerts')
 

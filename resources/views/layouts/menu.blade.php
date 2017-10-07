@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('/alunos') }}">
+                <a href="{{ url('/studants') }}">
                     <i class="material-icons">person</i>
                     <span>Alunos</span>
                 </a>
@@ -29,9 +29,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{url('/matriculas')}}">
-                    <i class="material-icons">picture_in_picture</i>
-                    <span>Matriculas</span>
+                <a href="{{url('/chamadas')}}">
+                    <i class="material-icons">record_voice_over</i>
+                    <span>Frequência</span>
                 </a>
             </li>
             <li>
@@ -77,7 +77,7 @@
             @can('admin')
             <li>
                 <a href="javascript:void(0);" class="menu-toggle">
-                    <i class="material-icons">person</i>
+                    <i class="material-icons">supervisor_account</i>
                     <span>Usuario</span>
                 </a>
                 <ul class="ml-menu">

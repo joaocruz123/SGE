@@ -8,9 +8,9 @@
                     <div class="card">
                         <div class="body">
                             <div class="pull-right">
-                                <a href="{{ route('alunos.create') }}"><button type="button" class="btn bg-green waves-effect "><i class="material-icons">add</i> Novo Aluno</button></a>
+                                <a href="{{ route('studants.create') }}"><button type="button" class="btn bg-green waves-effect "><i class="material-icons">add</i> Novo Aluno</button></a>
                             </div>
-                            {!! Form::open(['method' => 'GET', 'url' => '/alunos',  'role' => 'search']) !!}
+                            {!! Form::open(['method' => 'GET', 'url' => '/studants',  'role' => 'search']) !!}
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <div class="form-line">
@@ -24,30 +24,31 @@
                     </div>
                     <div class="card">
                         <div class="header">
-
                             <h1><i class="material-icons">person</i> Alunos</h1>
                         </div>
                         <div class="body table-responsive">
-                            @if($alunos->count())
+                            @if($studants->count())
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">
                                     <tr>
                                         <th>#</th>
                                         <th>Nome</th>
+                                        <th>Turma</th>
                                         <th>Data de Cadastro</th>
                                         <th>Ação</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($alunos as $aluno)
+                                    @foreach($studants as $studant)
                                         <tr>
-                                            <td>{{$aluno->id}}</td>
-                                            <td>{{$aluno->nome}}</td>
-                                            <td>{{date('d/m/Y', strtotime($aluno->created_at))}}</td>
+                                            <td>{{$studant->id}}</td>
+                                            <td>{{$studant->nome}}</td>
+                                            <td>{{$studant->turma->nome}}</td>
+                                            <td>{{date('d/m/Y', strtotime($studant->created_at))}}</td>
                                             <td>
-                                                <a href="{{ route('alunos.edit', $aluno->id) }}" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>
-                                                <button class="btn btn-primary btn-circle waves-effect" data-toggle="modal" data-target="#modal-{{ $aluno->id }}"><i class="material-icons">visibility</i></button>
-                                                <form action="{{ route('alunos.destroy', $aluno->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar? A confirmação apagará PERMANENTEMENTE!')) { return true } else {return false };">
+                                                <a href="{{ route('studants.edit', $studant->id) }}" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>
+                                                <button class="btn btn-primary btn-circle waves-effect" data-toggle="modal" data-target="#modal-{{ $studant->id }}"><i class="material-icons">visibility</i></button>
+                                                <form action="{{ route('studants.destroy', $studant->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar? A confirmação apagará PERMANENTEMENTE!')) { return true } else {return false };">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <button type="submit" class="btn btn-danger btn-circle waves-effect"><i class="material-icons">close</i></button>
@@ -55,28 +56,28 @@
                                             </td>
                                         </tr>
                                         <!-- Modal de Visualização -->
-                                        <div class="modal fade" id="modal-{{ $aluno->id }}" tabindex="-1" role="dialog">
+                                        <div class="modal fade" id="modal-{{ $studant->id }}" tabindex="-1" role="dialog">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header bg-blue">
-                                                        <h1 id="ModalLabel">{{$aluno->nome}}</h1>
+                                                        <h1 id="ModalLabel">{{$studant->nome}}</h1>
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="col-sm-6">
                                                             <label>Idade:</label>
-                                                            <p>{{$aluno->idade}} anos</p>
+                                                            <p>{{$studant->idade}} anos</p>
                                                             <label>CPF:</label>
-                                                            <p>{{$aluno->cpf}}</p>
+                                                            <p>{{$studant->cpf}}</p>
                                                             <label>Endereço:</label>
-                                                            <p>{{$aluno->endereco}}</p>
+                                                            <p>{{$studant->endereco}}</p>
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <label>Data de Cadastro:</label>
-                                                            <p>{{date('d/m/Y', strtotime($aluno->created_at))}}</p>
+                                                            <p>{{date('d/m/Y', strtotime($studant->created_at))}}</p>
                                                             <label>Telefone:</label>
-                                                            <p>{{$aluno->telefone}}</p>
+                                                            <p>{{$studant->telefone}}</p>
                                                             <label>Ultima atualização:</label>
-                                                            <p>{{date('d/m/Y', strtotime($aluno->updated_at))}}</p>
+                                                            <p>{{date('d/m/Y', strtotime($studant->updated_at))}}</p>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -89,7 +90,7 @@
 
                                     </tbody>
                                 </table>
-                                {!! $alunos->appends(['search'=>Request::get('search')])->render() !!}
+                                {!! $studants->appends(['search'=>Request::get('search')])->render() !!}
                         </div>
                         @else
                             <h3 class="text-center alert alert-info">Nenhum Aluno!</h3>

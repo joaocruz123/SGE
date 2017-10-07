@@ -129,6 +129,7 @@ class AlunoController extends Controller {
 	public function destroy($id)
 	{
 		$aluno = Aluno::findOrFail($id);
+
 		$aluno->delete();
 
 		return redirect()->route('alunos.index')->with(alert()->error('Aluno Deletado', 'O aluno foi deletado da lista.'));

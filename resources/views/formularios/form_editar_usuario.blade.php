@@ -2,17 +2,13 @@
 @section('content')
     @can('admin')
 <section class="content" >
-
-@include('flash::message')
-
-<div class="row" >
-
-<div class="col-md-12">
-
-  <div class="box box-primary box-gris">
-    <div class="box-header with-border my-box-header">
-        <h3 class="box-title"><strong>Atribuir Papel</strong></h3>
-    </div><!-- /.box-header -->
+    @include('flash::message')
+    <div class="row" >
+        <div class="col-md-12">
+            <div class="box box-primary box-gris">
+                <div class="box-header with-border my-box-header">
+                    <h3 class="box-title"><strong>Atribuir Papel</strong></h3>
+                </div><!-- /.box-header -->
    
     <div id="zona_etiquetas_roles" style="background-color:white;" >
     Roles asignados:

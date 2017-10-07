@@ -12,11 +12,11 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box-3 bg-pink hover-zoom-effect">
                         <div class="icon">
-                            <i class="material-icons">content_paste</i>
+                            <i class="material-icons">stars</i>
                         </div>
                         <div class="content">
-                            <div class="text">MATRICULADOS</div>
-                            <div class="number">{{$totalMatriculas}}</div>
+                            <div class="text">COORDENADORES</div>
+                            <div class="number">{{$totalCordenador}}</div>
                         </div>
                     </div>
 

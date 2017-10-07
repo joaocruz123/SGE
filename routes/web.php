@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => ['web']], function(){
-    Route::resource('alunos', 'AlunoController');
+    Route::resource('studants','StudantController');
 
     Route::resource('turmas', 'TurmaController');
 
@@ -56,5 +56,11 @@ Route::group(['middleware' => ['web']], function(){
     Route::get('/imprimir/aluno', 'AlunoController@gerarPdf');
 
     Route::resource('aluno_relatorio', 'AlunoController@relatorioAluno');
+
+    Route::resource('chamadas', 'ChamadaController');
+
+    Route::put('/fazer_chamada/chamada/{id}', 'ChamadaController@fazer_chamada');
+
+    Route::resource('/chamadas/frequencia/{id}', 'ChamadaController@frequencia');
 
 });

@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-	@can('admin')
+
 	<section class="content">
 		<div class="container-fluid">
 			<div class="row clearfix">
+				@can('admin')
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					@include('flash::message')
 					<div class="card">
@@ -83,8 +84,12 @@
 					</div>
 					@endif
 				</div>
+				@else
+					<div class="alert alert-danger">
+						<strong>Desculpe!</strong> Você não possui permissão para acessar essa página!
+					</div>
+				@endcan
 			</div>
 		</div>
 	</section>
-	@endcan
 @endsection
