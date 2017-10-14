@@ -31,7 +31,7 @@
                                 <table class="table table-bordered">
                                     <thead class="bg-blue-grey">
                                     <tr>
-                                        <th>#</th>
+                                        <th>Matricula</th>
                                         <th>Nome</th>
                                         <th>Turma</th>
                                         <th>Data de Cadastro</th>
@@ -41,7 +41,7 @@
                                     <tbody>
                                     @foreach($studants as $studant)
                                         <tr>
-                                            <td>{{$studant->id}}</td>
+                                            <td style="color: red">{{$studant->matricula}}</td>
                                             <td>{{$studant->nome}}</td>
                                             <td>{{$studant->turma->nome}}</td>
                                             <td>{{date('d/m/Y', strtotime($studant->created_at))}}</td>
@@ -63,21 +63,41 @@
                                                         <h1 id="ModalLabel">{{$studant->nome}}</h1>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <div class="col-sm-6">
-                                                            <label>Idade:</label>
-                                                            <p>{{$studant->idade}} anos</p>
-                                                            <label>CPF:</label>
-                                                            <p>{{$studant->cpf}}</p>
-                                                            <label>Endereço:</label>
-                                                            <p>{{$studant->endereco}}</p>
+                                                        <div class="col-sm-12">
+                                                            <div class="header">
+                                                                <h4>Dados Pessoais</h4>
+                                                            </div>
+                                                            <div class="body">
+                                                                <div class="col-sm-6">
+                                                                    <label>CPF:</label>
+                                                                    <p>{{$studant->cpf}}</p>
+
+                                                                    <label>Telefone:</label>
+                                                                    <p>{{$studant->telefone}}</p>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <label>Endereço:</label>
+                                                                    <p>{{$studant->endereco}}</p>
+
+                                                                    <label>Idade:</label>
+                                                                    <p>{{$studant->idade}} anos</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-sm-6">
-                                                            <label>Data de Cadastro:</label>
-                                                            <p>{{date('d/m/Y', strtotime($studant->created_at))}}</p>
-                                                            <label>Telefone:</label>
-                                                            <p>{{$studant->telefone}}</p>
-                                                            <label>Ultima atualização:</label>
-                                                            <p>{{date('d/m/Y', strtotime($studant->updated_at))}}</p>
+                                                        <div class="col-sm-12">
+                                                            <div class="header">
+                                                                <h4>Dados de Matricula</h4>
+                                                            </div>
+                                                            <div class="body">
+                                                                <div class="col-sm-6">
+                                                                    <label>Classe Matriculado(a):</label>
+                                                                    <p>{{$studant->turma->nome}}</p>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <label>Número de Matricula:</label>
+                                                                    <p>{{$studant->matricula}}</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">

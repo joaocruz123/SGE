@@ -83,5 +83,6 @@
 
     <div class="col-sm-12">
         {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Criar', ['class' => 'btn btn-primary']) !!}
+        <a class="btn btn-link pull-right" href="{{ route('chamadas.index') }}"><i class="material-icons">arrow_back</i></a>
     </div>
 </div>

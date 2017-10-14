@@ -18,7 +18,7 @@ class CreateChamadasTable extends Migration {
             $table->integer('realizada');
             $table->timestamps();
 
-            $table->foreign('turma_id')->references('id')->on('turmas');
+            $table->foreign('turma_id')->references('id')->on('turmas')->onDelete('cascade');
         });
     }
 

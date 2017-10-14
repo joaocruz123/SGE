@@ -20,10 +20,11 @@ class CreatestudantsTable extends Migration {
             $table->string('endereco');
             $table->integer('idade');
             $table->integer('telefone');
+            $table->char('matricula');
             $table->integer('turma_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('turma_id')->references('id')->on('turmas');
+            $table->foreign('turma_id')->references('id')->on('turmas')->onDelete('cascade');
         });
     }
 

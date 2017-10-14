@@ -147,12 +147,10 @@ class ChamadaController extends Controller
 
         $chamada->delete();
 
-        return view('chamadas.index');
+        return redirect()->route('chamadas.index')->with(alert()->error('Chamada Deletada', 'Todos os dados foram apagados!'));
     }
 
     public function frequencia($id){
-
-        $turmas = Turma::all();
 
         $chamada = Chamada::findOrFail($id);
 

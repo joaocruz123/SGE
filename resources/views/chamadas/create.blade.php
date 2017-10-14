@@ -8,12 +8,9 @@
                     <div class="card">
                         <div class="header">
 
-                            <h1><i class="material-icons">person</i> Criar nova Frequencia</h1>
+                            <h1><i class="material-icons">person</i> Criar nova Frequência</h1>
                         </div>
                         <div class="body">
-                            <a href="{{ url('/chamadas') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
-                            <br />
-                            <br />
 
                             @if ($errors->any())
                                 <ul class="alert alert-danger">

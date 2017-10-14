@@ -28,7 +28,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    {!! Charts::assets() !!}
+    {!! \ConsoleTVs\Charts\Facades\Charts::assets() !!}
 
     <!-- Scripts -->
     <script>

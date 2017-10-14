@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\Chamada;
 use App\Cordenador;
 use App\Despesa;
 use App\Matricula;
 use App\Professor;
 use App\Renda;
 use App\Studant;
+use App\Turma;
 use App\User;
-use ConsoleTVs\Charts\Charts;
+use ConsoleTVs\Charts\Facades\Charts;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -32,7 +34,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $totalCordenador = Cordenador::count();
+        $totalTurmas = Turma::count();
         $totalAlunos = Studant::count();
         $totalProfessor = Professor::count();
         $totalUsuarios = User::count();
@@ -44,15 +46,20 @@ class HomeController extends Controller
 
 
         /*$matriculas = Matricula::with(['aluno', 'turma'])->orderBy('id','desc')->take(3)->get();*/
+        $chart=Charts::multiDatabase('line', 'highcharts')
+            ->title('Receitas e Despesas dos ultimos 6 mêses')
+            ->colors(['#0000ff','#ff0000'])
+            ->elementLabel("Total")
+            ->dataset('Rendas', Renda::all())
+            ->dataset('Despesas', Despesa::all())
+            ->lastByMonth(6, true);
 
-        $chart = Charts::database(Renda::all(),'line', 'highcharts')
-            // Use this if you want to use your own template
-            ->setTitle('Receitas dos Ultimos 6 mêses')
-            ->setElementLabel("Total")
-            ->setResponsive(true)
-            ->groupByMonth('2017', true);
+        $chamadas= Chamada::all()->take(4);
 
-        return view('home', compact('totalCordenador','totalAlunos', 'totalProfessor', 'totalUsuarios', 'rendas', 'despesas','chart'));
+        $turmas = Turma::all();
+        $user= User::all();
+
+        return view('home', compact('totalTurmas','totalAlunos', 'totalProfessor', 'totalUsuarios', 'rendas', 'despesas','chart', 'chamadas', 'turmas','user'));
     }
 
 }

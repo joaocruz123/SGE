@@ -20,8 +20,8 @@ class CreateChamadaAlunoTable extends Migration
             $table->integer('chamada_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('aluno_id')->references('id')->on('studants');
-            $table->foreign('chamada_id')->references('id')->on('chamadas');
+            $table->foreign('aluno_id')->references('id')->on('studants')->onDelete('cascade');
+            $table->foreign('chamada_id')->references('id')->on('chamadas')->onDelete('cascade');
 
         });
     }

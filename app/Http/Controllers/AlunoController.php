@@ -31,7 +31,9 @@ class AlunoController extends Controller {
         if(!empty($keyword)){
             $alunos = Aluno::where('nome','LIKE',"$keyword%")
                 ->orWhere('endereco', 'LIKE', "$keyword%")
-                ->paginate($perPage);
+                ->paginate($perPage)
+                ->orderBy('nome', 'asc')
+                ->get();
         }else{
             $alunos = Aluno::orderBy('nome', 'asc')->paginate($perPage);
         }

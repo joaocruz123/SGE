@@ -19,7 +19,7 @@ class CreateListaFaltasTable extends Migration
             $table->integer('total_faltas');
             $table->timestamps();
 
-            $table->foreign('aluno_id')->references('id')->on('studants');
+            $table->foreign('aluno_id')->references('id')->on('studants')->onDelete('cascade');
         });
     }
 

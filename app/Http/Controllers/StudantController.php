@@ -8,6 +8,7 @@ use App\Turma;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use \PDF;
+use TomLingham\Searchy\Facades\Searchy;
 
 class StudantController extends Controller {
 
@@ -67,6 +68,7 @@ class StudantController extends Controller {
         $studant->cpf = $request->input("cpf");
         $studant->sexo = $request->input("sexo");
         $studant->endereco = $request->input("endereco");
+        $studant->matricula = 101 . $request->input("cpf"). 2017 ;
         $studant->idade = $request->input("idade");
         $studant->telefone = $request->input("telefone");
         $studant->turma_id = $request->turma;
@@ -87,7 +89,9 @@ class StudantController extends Controller {
     {
         $studant = Studant::findOrFail($id);
 
-        return view('studants.show', compact('studant'));
+        $turmas = Turma::all();
+
+        return view('studants.show', compact('studant', 'turmas'));
     }
 
     /**
@@ -119,6 +123,7 @@ class StudantController extends Controller {
         $studant->cpf = $request->input("cpf");
         $studant->sexo = $request->input("sexo");
         $studant->endereco = $request->input("endereco");
+        $studant->matricula = $request->input("cpf"."created_at");
         $studant->idade = $request->input("idade");
         $studant->telefone = $request->input("telefone");
         $studant->turma_id = $request->turma;
@@ -143,19 +148,22 @@ class StudantController extends Controller {
     }
 
     public function relatorioAluno(){
+        $turmas = Turma::all();
 
         $studants = Studant::orderBy('nome', 'asc')->get();
 
-        return view('relatorios.aluno_relatorio', compact('studants'));
+        return view('relatorios.aluno_relatorio', compact('studants', 'turmas'));
     }
 
     public function gerarPdf(Request $request){
 
         $keyword = $request->get('search');
 
+        $turmas = Turma::all();
+
         if (!empty($keyword)) {
             $studants = Studant::where('nome', 'LIKE', "$keyword%")
-                ->orWhere('cpf', 'LIKE', "$keyword%")
+                ->orWhere('matricula', 'LIKE', "$keyword%")
                 ->orWhere('created_at', 'LIKE', "%$keyword%")
                 ->orderBy('nome', 'asc')
                 ->get();
@@ -178,7 +186,7 @@ class StudantController extends Controller {
 
         return $pdf->download(md5( date('Y-m-d H:i:s') ).'.pdf');*/
 
-        $pdf = PDF::loadView('studants.pdf', compact('alunos'));
+        $pdf = PDF::loadView('studants.pdf', compact('studants','turmas'));
 
         return $pdf->stream(md5( date('Y-m-d H:i:s') ).'.pdf');
 

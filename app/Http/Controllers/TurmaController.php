@@ -106,9 +106,10 @@ class TurmaController extends Controller {
 	public function destroy($id)
 	{
 		$turma = Turma::findOrFail($id);
-		$turma->delete();
 
-		return redirect()->route('turmas.index')->with(alert()->erro('Turma Deletada', 'Turma deletada da lista.'));
+        $turma->delete();
+
+		return redirect()->route('turmas.index')->with(alert()->error('Turma Deletada', 'Turma deletada da lista.'));
 	}
 
 }

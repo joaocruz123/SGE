@@ -3,6 +3,10 @@
 @section('content')
     <section class="content">
         <div class="container-fluid">
+            <div class="alert bg-green alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Seja bem vindo ao Sistema de Gestão de Escola Bíblica <strong>{{ Auth::user()->name }}</strong>, use o menu lateral para acessar as opções do sistema!
+            </div>
             <div class="block-header">
                 <h2>Painel Principal</h2>
             </div>
@@ -15,8 +19,8 @@
                             <i class="material-icons">stars</i>
                         </div>
                         <div class="content">
-                            <div class="text">COORDENADORES</div>
-                            <div class="number">{{$totalCordenador}}</div>
+                            <div class="text">TURMAS</div>
+                            <div class="number">{{$totalTurmas}}</div>
                         </div>
                     </div>
 
@@ -132,7 +136,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="card">
                                 <div class="header">
-                                    <h4><i class="material-icons">warning</i> Chart</h4>
+                                    <h4><i class="material-icons">trending_up</i> Estatísticas Financeiras</h4>
                                 </div>
                                 <div class="body">
                                     {!! $chart->render() !!}
@@ -142,6 +146,54 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row clearfix">
+                        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h4><i class="material-icons">record_voice_over</i> Ultimas Chamadas</h4>
+                                </div>
+                                <div class="body table-responsive">
+                                    @if(count($chamadas)>0)
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>Turma</th>
+                                                    <th>Data da Chamada</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                @foreach($chamadas as $chamada)
+                                                    <tr>
+                                                        <td>{{ $chamada->turma->nome }}</td>
+                                                        <td><p>{{date('d/m/Y', strtotime($chamada->datachamada))}}</p></td>
+                                                        @if($chamada->realizada == 1)
+                                                            <td>{!! getStatusChamada($chamada->realizada) !!}</td>
+                                                        @else
+                                                            <td>{!! getStatusChamada($chamada->realizada) !!}</td>
+                                                        @endif
+                                                    </tr>
+                                                @endforeach
+                                                @else
+                                                    <h3 class="text-center alert alert-info">Nenhuma Chamada Realizada!</h3>
+                                                @endif
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </section>

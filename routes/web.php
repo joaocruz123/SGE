@@ -49,13 +49,13 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('relatorio_mensal', 'RelatorioMensalController');
 
-    Route::get('/imprimir/lista', 'AlunoController@gerarPdf');
-
     Route::get('/imprimir/relatorio', 'RelatorioMensalController@gerarPdf');
 
-    Route::get('/imprimir/aluno', 'AlunoController@gerarPdf');
+    Route::get('/imprimir/lista', 'StudantController@gerarPdf');
 
-    Route::resource('aluno_relatorio', 'AlunoController@relatorioAluno');
+    Route::get('/imprimir/aluno', 'StudantController@gerarPdf');
+
+    Route::resource('aluno_relatorio', 'StudantController@relatorioAluno');
 
     Route::resource('chamadas', 'ChamadaController');
 
