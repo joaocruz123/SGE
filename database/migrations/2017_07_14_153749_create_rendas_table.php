@@ -13,7 +13,7 @@ class CreateRendasTable extends Migration
      */
     public function up()
     {
-        /**Schema::create('rendas', function (Blueprint $table) {
+        Schema::create('rendas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('categoria_renda_id')->unsigned()->nullable();
             $table->foreign('categoria_renda_id', '50058_5959a5b67d400')->references('id')->on('categorias_rendas')->onDelete('cascade');
@@ -22,7 +22,7 @@ class CreateRendasTable extends Migration
 
             $table->timestamps();
 
-        });*/
+        });
     }
 
     /**

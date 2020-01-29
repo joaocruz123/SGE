@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterTableAluno extends Migration
+class CreateTesteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,7 @@ class AlterTableAluno extends Migration
      */
     public function up()
     {
-        // Schema::table('alunos',function($t){
-        //     $t->string('telefone')->nullable();
-        // });
+        //
     }
 
     /**
@@ -25,8 +23,6 @@ class AlterTableAluno extends Migration
      */
     public function down()
     {
-        Schema::table('alunos',function($t){
-            $t->dropColumn('telefone');
-        });
+        //
     }
 }
