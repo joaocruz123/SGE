@@ -63,7 +63,7 @@ class RelatorioMensalController extends Controller
             }
         }
 
-        return view('relatorio_mensal.index', compact('exp_summary', 'inc_summary', 'exp_total', 'inc_total', 'profit', 'm'));
+        return view('relatorio_mensal.index', compact('exp_summary', 'inc_summary', 'exp_total', 'inc_total', 'profit', 'from'));
     }
 
 

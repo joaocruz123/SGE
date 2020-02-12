@@ -158,9 +158,7 @@ class ChamadaController extends Controller
 
         $alunos = Studant::where('turma_id', $chamada->turma->id)->get();
 
-
-
-        return view('chamadas.fazer_chamada', compact('chamada','turmas','alunos', 'presencas'));
+        return view('chamadas.fazer_chamada', compact('chamada','alunos', 'presencas'));
     }
 
     public function fazer_chamada( $id, Request $request ){
