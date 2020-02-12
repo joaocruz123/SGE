@@ -7,6 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
+        "doctrine/dbal": "v2.4.2",
         "laravelcollective/html": "^5.3.0",
         "infinety/alerts": "*@dev",
         "igorescobar/jquery-mask-plugin": "^1.14",
@@ -19,7 +20,8 @@
         "consoletvs/charts": "4.*",
         "caffeinated/shinobi": "^3.0",
         "laracasts/flash": "^3.0",
-        "tom-lingham/searchy" : "2.*"
+        "tom-lingham/searchy" : "2.*",
+        "nesbot/carbon": "^1.20"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
