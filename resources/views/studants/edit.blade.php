@@ -14,6 +14,7 @@
                             <form action="{{ route('studants.update', $studant->id) }}" method="POST">
                                 <input type="hidden" name="_method" value="PUT">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="matricula" value="{{ is_null(old("matricula")) ? $studant->matricula : old("matricula") }}">
                                 <div class="col-sm-6">
                                     <div class="form-group @if($errors->has('nome')) has-error @endif">
                                         <label for="nome-field">Nome:</label>

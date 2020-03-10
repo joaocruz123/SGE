@@ -28,12 +28,12 @@
                                             <td>{{$professor->nome}}</td>
                                             <td>{{date('d/m/Y', strtotime($professor->created_at))}}</td>
                                             <td>
-                                                <a href="{{ route('professors.edit', $professor->id) }}" title="Editar"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">edit</i></button></a>
-                                                <button class="btn btn-primary btn-circle waves-effect" data-toggle="modal" data-target="#modal-{{ $professor->id }}"><i class="material-icons">visibility</i></button>
+                                                <a href="{{ route('professors.edit', $professor->id) }}" title="Editar"><button class="btn btn-warning btn-xs waves-effect"><i class="material-icons">edit</i></button></a>
+                                                <button class="btn btn-xs btn-primary waves-effect" data-toggle="modal" data-target="#modal-{{ $professor->id }}"><i class="material-icons">visibility</i></button>
                                                 <form action="{{ route('professors.destroy', $professor->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar? A confirmação apagará PERMANENTEMENTE!')) { return true } else {return false };">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    <button type="submit" class="btn btn-danger btn-circle waves-effect"><i class="material-icons">close</i></button>
+                                                    <button type="submit" class="btn btn-xs btn-danger waves-effect"><i class="material-icons">close</i></button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -32,12 +32,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $totalTurmas = Turma::count();
         $totalAlunos = Studant::count();
         $totalProfessor = Professor::count();
         $totalUsuarios = User::count();
+
+        
+        //Notificação de Bem-vindo
+        //smilify('success', 'Seja bem vindo ao Sistema de Gestão de Escola Bíblica use o menu lateral para acessar as opções do sistema!');
 
         $rendas = Renda::with(['categoria_renda'])->orderBy('id','desc')->take(4)->get();
 
@@ -58,7 +62,7 @@ class HomeController extends Controller
 
         $turmas = Turma::all();
         $user= User::all();
-
+        
         return view('home', compact('totalTurmas','totalAlunos', 'totalProfessor', 'totalUsuarios', 'rendas', 'despesas','chart', 'chamadas', 'turmas','user'));
     }
 

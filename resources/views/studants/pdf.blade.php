@@ -24,7 +24,7 @@
                                 @foreach($studants as $item)
                                     <tr>
                                         <td><strong>{{ $item->nome }}</strong></td>
-                                        <td>{{$item->endereco }}</td>
+                                        <td style="color: red">{{$item->matricula }}</td>
                                         <td>{{ $item->cpf }}</td>
                                         <td>{{ $item->telefone }}</td>
                                         <td style="color: green">{{$item->turma->nome}}</td>

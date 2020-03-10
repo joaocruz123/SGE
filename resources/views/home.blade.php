@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('notify::messages')
     <section class="content">
         <div class="container-fluid">
-            <div class="alert bg-green alert-dismissible" role="alert">
+            {{-- <div class="alert bg-green alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 Seja bem vindo ao Sistema de Gestão de Escola Bíblica <strong>{{ Auth::user()->name }}</strong>, use o menu lateral para acessar as opções do sistema!
-            </div>
+            </div> --}}
             <div class="block-header">
-                <h2>Painel Principal</h2>
+                <h2>Painel Principal </h2>
             </div>
 
             <!-- Widgets -->
@@ -186,15 +187,11 @@
                                             </table>
                                         </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </section>
 @endsection

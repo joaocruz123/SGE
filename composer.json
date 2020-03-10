@@ -18,10 +18,10 @@
         "h4cc/wkhtmltopdf-amd64": "0.12.x",
         "h4cc/wkhtmltoimage-amd64": "0.12.x",
         "consoletvs/charts": "4.*",
-        "caffeinated/shinobi": "^3.0",
         "laracasts/flash": "^3.0",
         "tom-lingham/searchy" : "2.*",
-        "nesbot/carbon": "^1.20"
+        "nesbot/carbon": "^1.20",
+        "mckenziearts/laravel-notify": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

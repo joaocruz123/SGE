@@ -83,12 +83,12 @@ class ChamadaController extends Controller
      */
     public function show($id)
     {
+        //$chamada_aluno = Chamada_aluno::where('chamada_id', $id)->get();
         $chamada_aluno = Chamada_aluno::all();
 
         $chamada = Chamada::findOrFail($id);
 
         $alunos = Studant::where('turma_id', $chamada->turma->id)->get();
-
 
         return view('chamadas.show', compact('chamada','alunos', 'chamada_aluno'));
     }

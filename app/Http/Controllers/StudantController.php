@@ -31,7 +31,8 @@ class StudantController extends Controller {
 
         if(!empty($keyword)){
             $studants = Studant::where('nome','LIKE',"$keyword%")
-                ->orWhere('endereco', 'LIKE', "$keyword%")
+                ->orWhere('matricula', 'LIKE', "$keyword%")
+                ->orWhere('cpf', 'LIKE', "$keyword%")
                 ->paginate($perPage);
         }else{
             $studants = Studant::orderBy('nome', 'asc')->paginate($perPage);
@@ -62,13 +63,15 @@ class StudantController extends Controller {
      */
     public function store(Request $request)
     {
+        $part_number1 = rand(1,10000);
+        $part_number2 = rand(1,10000);
         $studant = new Studant();
 
         $studant->nome = $request->input("nome");
         $studant->cpf = $request->input("cpf");
         $studant->sexo = $request->input("sexo");
         $studant->endereco = $request->input("endereco");
-        $studant->matricula = 101 . $request->input("cpf"). 2017 ;
+        $studant->matricula = $part_number1 . date("dmY") . $part_number2 ;
         $studant->idade = $request->input("idade");
         $studant->telefone = $request->input("telefone");
         $studant->turma_id = $request->turma;
@@ -123,7 +126,7 @@ class StudantController extends Controller {
         $studant->cpf = $request->input("cpf");
         $studant->sexo = $request->input("sexo");
         $studant->endereco = $request->input("endereco");
-        $studant->matricula = $request->input("cpf"."created_at");
+        $studant->matricula = $request->input("matricula");
         $studant->idade = $request->input("idade");
         $studant->telefone = $request->input("telefone");
         $studant->turma_id = $request->turma;

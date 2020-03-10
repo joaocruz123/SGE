@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Caffeinated\Shinobi\Traits\ShinobiTrait;
+//use Caffeinated\Shinobi\Traits\ShinobiTrait;
 
 class User extends Authenticatable
 {
     use Notifiable;
-    use ShinobiTrait;
+    //use ShinobiTrait;
 
     /**
      * The attributes that are mass assignable.

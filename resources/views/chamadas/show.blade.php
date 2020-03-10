@@ -22,7 +22,7 @@
                                 ))!!}
                                 {!! Form::close() !!}
                             </div>
-                            <h1><i class="material-icons">person</i> Frequencia {{ $chamada->turma->nome }}</h1>
+                        <h1><i class="material-icons">person</i> Frequencia {{ $chamada->turma->nome }} {{ $chamada->datachamada}}</h1>
                         </div>
                         <div class="body table-responsive">
                             <div class="table-responsive">
@@ -71,7 +71,7 @@
                                             <tr>
                                                 <td>{{$aluno->nome}}</td>
                                                 <td>{{$aluno->idade}}</td>
-                                                <td>{!! getTotalFrequencia($aluno->id) !!}</td>
+                                                <td>{!! getTotalFrequencia($aluno->id, $chamada->id) !!}</td>
                                             </tr>
                                         @endforeach
                                     @else

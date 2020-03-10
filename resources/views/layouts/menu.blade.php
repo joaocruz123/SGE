@@ -17,6 +17,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{url('/disciplinas')}}">
+                    <i class="material-icons">emoji_objects</i>
+                    <span>Disciplinas</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{url('/turmas')}}">
                     <i class="material-icons">class</i>
                     <span>Turmas</span>
@@ -74,7 +80,7 @@
                     </li>
                 </ul>
             </li>
-            @can('admin')
+            {{-- @can('admin') --}}
             <li>
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">supervisor_account</i>
@@ -94,7 +100,7 @@
                     </li>
                 </ul>
             </li>
-            @endcan
+            {{-- @endcan --}}
         </ul>
     </div>
     <!-- #Menu -->

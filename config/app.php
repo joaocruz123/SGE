@@ -171,10 +171,11 @@ return [
         Laralib\L5scaffold\GeneratorsServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
-        Caffeinated\Shinobi\ShinobiServiceProvider::class, // For RBAC
+        //Caffeinated\Shinobi\ShinobiServiceProvider::class, // For RBAC
         Infinety\Alerts\AlertServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         TomLingham\Searchy\SearchyServiceProvider::class,
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
         //
 
         /*
@@ -238,7 +239,7 @@ return [
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
-        'Shinobi' => Caffeinated\Shinobi\Facades\Shinobi::class, // For RBAC functions
+        //'Shinobi' => Caffeinated\Shinobi\Facades\Shinobi::class, // For RBAC functions
         'Flash' => Laracasts\Flash\Flash::class,
         'Searchy' => TomLingham\Searchy\Facades\Searchy::class
 

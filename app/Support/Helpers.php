@@ -34,17 +34,21 @@ if( !function_exists( 'getStudant' ) ) {
 
 if( !function_exists( 'getTotalFrequencia' ) ) {
 
-    function getTotalFrequencia( $aluno_id ){
+    function getTotalFrequencia( $aluno_id, $chamada_id ){
         $resultado = \DB::table('chamada_alunos')
             ->select('presenca')
             ->where('aluno_id', '=', $aluno_id)
+            ->where('chamada_id', '=', $chamada_id)
             ->distinct()
             ->first();
+
         if(isset($resultado->presenca))
             if($resultado->presenca == 1)
-            return "<span class='label label-success'>Presente</span>";
+                return "<span class='label label-success'>Presente</span>";
+            if($resultado->presenca == 0)
+                return "<span class='label label-danger'>Ausente</span>";
 
-        return "<span class='label label-danger'>Ausente</span>";
+        return "<span class='label label-warning'>none</span>";
     }
 }
 
@@ -60,34 +64,6 @@ if( !function_exists( 'getTotalFaltas' ) ) {
             return $resultado->total_faltas;
         
         return 0;
-    }
-}
-
-
-if( !function_exists( 'getIdade' ) ) {
-    
-    function getIdade( $data_nasc ){
-        $data_nasc=explode("/", $data_nasc);
-        $data=date("d/m/Y");
-        $data=explode("/",$data);
-        
-        $dt_nascimento = $data_nasc[0].'-'.$data_nasc[1].'-'.$data_nasc[2];
-        $dt_hoje = $data[2].'-'.$data[1].'-'.$data[0];
-
-        $diff = abs(strtotime($dt_hoje) - strtotime($dt_nascimento));
-
-        $years = floor($diff / (365*60*60*24));
-        $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-        $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-
-        if((int)$years > 0){
-            return "$years ano(s), $months mes(es), $days dia(s)"; //, $years, $months, $days);
-        } else if((int)$years == 0 && (int)$months > 0){
-            return "$months mes(es), $days dia(s)";
-        } else if((int)$years == 0 && (int)$months == 0 && (int)$days > 0){
-            return "$days dia(s)";
-        }
-
     }
 }
 

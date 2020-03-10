@@ -35,6 +35,8 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('turmas', 'TurmaController');
 
+    Route::resource('disciplinas', 'DisciplinaController');
+
     Route::resource('professors', 'ProfessorController');
 
     Route::resource('matriculas', 'MatriculaController');

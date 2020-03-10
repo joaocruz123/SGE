@@ -1,44 +1,42 @@
 <div class="row">
-    <div class="col-sm-6">
-<div class="form-group @if($errors->has('datachamada')) has-error @endif">
-    <label for="nome-field">Data:</label>
-    <div class="form-group">
-        <div class="form-line">
-            <input type="date" id="nome-field" name="datachamada" class="form-control" value="{{ old("datachamada") }}" required/>
+    <div class="col-sm-4">
+        <div class="form-group @if($errors->has('datachamada')) has-error @endif">
+            <label for="nome-field">Data:</label>
+            <div class="form-group">
+                <div class="form-line">            
+                    {{-- <input type="text" class="datepicker form-control" placeholder="00/00/0000" value="{{ old("datachamada") }}" required> --}}
+                    <input type="date" id="nome-field" name="datachamada" class="form-control" value="{{ old("datachamada") }}" required/>
+                </div>
+            </div>
+            @if($errors->has("datachamada"))
+                <span class="help-block">{{ $errors->first("datachamada") }}</span>
+            @endif
         </div>
     </div>
-    @if($errors->has("datachamada"))
-        <span class="help-block">{{ $errors->first("datachamada") }}</span>
-    @endif
-</div>
-</div>
-    <div class="col-sm-6">
-    <div class="form-group">
-        @if( count($turmas)<1 )
-            <br>
-            <h5 class="red-text">
-                Nenhum Turma encontrada!
-            </h5>
-            <br>
-        @else
-            <label for="turma">Turma: </label>
-            <select class="form-control show-tick" name="turma" id="turma" required>
+    <div class="col-sm-4">
+        <div class="form-group">
+            @if( count($turmas)<1 )
+                <br>
+                <h5 class="red-text">
+                    Nenhum Turma encontrada!
+                </h5>
+                <br>
+            @else
+                <label for="turma">Turma: </label>
+                <select class="form-control show-tick" name="turma" id="turma" required>
 
 
-                @foreach($turmas as $turma)
-                    <option value="{{$turma->id}}">{{$turma->nome}}</option>
-                @endforeach
+                    @foreach($turmas as $turma)
+                        <option value="{{$turma->id}}">{{$turma->nome}}</option>
+                    @endforeach
 
 
-            </select>
+                </select>
 
-        @endif
+            @endif
 
+        </div>
     </div>
-</div>
-</div>
-<br>
-<div class="row">
     <div class="col-sm-4">
         <div class="form-group @if($errors->has('visitantes')) has-error @endif">
             <label for="nome-field">Visitantes:</label>
@@ -52,6 +50,9 @@
             @endif
         </div>
     </div>
+</div>
+<br>
+<div class="row">
     <div class="col-sm-4">
         <div class="form-group @if($errors->has('biblias')) has-error @endif">
             <label for="nome-field">Bíblias:</label>

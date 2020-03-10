@@ -3,7 +3,7 @@
    var pluginName = "bootstrapMaterialDatePicker";
    var pluginDataName = "plugin_" + pluginName;
 
-   moment.locale('en');
+   moment.locale('pt');
 
    function Plugin(element, options)
    {

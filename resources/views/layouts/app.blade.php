@@ -24,9 +24,18 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}">
 
+     <!-- Bootstrap Material Datetime Picker Css -->
+     <link rel="stylesheet" type="text/css" href="{{asset('/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}">
+
+     <!-- Bootstrap DatePicker Css -->
+     <link rel="stylesheet" type="text/css" href="{{asset('/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css')}}">
+ 
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+
+    @notifyCss
 
     {!! \ConsoleTVs\Charts\Facades\Charts::assets() !!}
 
@@ -105,10 +114,6 @@
 
         <script src="{{asset('/plugins/jquery-countto/jquery.countTo.js')}}"></script>
 
-        <script src="{{asset('/plugins/momentjs/moment.js')}}"></script>
-
-        <script src="{{asset('/plugins/bootstrap-notify/bootstrap-notify.js')}}"></script>
-
         <script src="{{asset('/js/modals.js')}}"></script>
 
         <script src="{{asset('js/sweetalert.js')}}"></script>
@@ -126,14 +131,32 @@
 
         <!-- Demo Js -->
         <script src="{{asset('/js/demo.js')}}"></script>
-
+        
         <script src="{{asset('/js/pages/widgets/infobox/infobox-4.js')}}"></script>
 
         <script src="{{ asset('/js/bootstrap-checkbox-radio-switch.js') }}"></script>
 
         @include('Alerts::alerts')
 
-    </div>
+        @notifyJs
 
+        <!-- Moment Plugin Js -->
+        <script src="/plugins/momentjs/moment.js"></script>
+
+        <!-- Bootstrap Material Datetime Picker Plugin Js -->
+        <script src="/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+        <!-- Bootstrap Datepicker Plugin Js -->
+        <script src="/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+        <script type="text/javascript">
+            $('.datepicker').bootstrapMaterialDatePicker({
+                format: 'DD-MM-YYYY',
+                clearButton: true,
+                weekStart: 1,
+                time: false
+            });
+        </script>
+    </div>
 </body>
 </html>

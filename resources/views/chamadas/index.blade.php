@@ -37,15 +37,15 @@
                                                 <td>
 
                                                     @if($chamada->realizada == 1)
-                                                        <a href="{{ url('/chamadas/' . $chamada->id) }}" title="Visualizar Chamada"><button class="btn btn-info btn-circle waves-effect"><i class="material-icons">visibility</i></button></a>
+                                                        <a href="{{ url('/chamadas/' . $chamada->id) }}" title="Visualizar Chamada"><button class="btn btn-info btn-xs waves-effect"><i class="material-icons">visibility</i></button></a>
                                                     @else
-                                                        <a href="{{ url('/chamadas/frequencia/' . $chamada->id) }}" title="Realizar Chamada"><button class="btn btn-warning btn-circle waves-effect"><i class="material-icons">content_paste</i></button></a>
+                                                        <a href="{{ url('/chamadas/frequencia/' . $chamada->id) }}" title="Realizar Chamada"><button class="btn btn-warning btn-xs waves-effect"><i class="material-icons">content_paste</i></button></a>
                                                     @endif
-                                                    <a href="{{ url('/chamadas/' . $chamada->id . '/edit') }}" title="Edit Chamada"><button class="btn btn-primary btn-circle waves-effect"><i class="material-icons">edit</i></button></a>
+                                                    <a href="{{ url('/chamadas/' . $chamada->id . '/edit') }}" title="Edit Chamada"><button class="btn btn-primary btn-xs waves-effect"><i class="material-icons">edit</i></button></a>
                                                     <form action="{{ route('chamadas.destroy', $chamada->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar? A confirmação apagará PERMANENTEMENTE!')) { return true } else {return false };">
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                        <button type="submit" class="btn btn-danger btn-circle waves-effect"><i class="material-icons">close</i></button>
+                                                        <button type="submit" class="btn btn-danger btn-xs waves-effect"><i class="material-icons">close</i></button>
                                                     </form>
                                                 </td>
                                             </tr>
