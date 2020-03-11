@@ -35,6 +35,10 @@ Route::group(['middleware' => ['web']], function(){
 
     Route::resource('turmas', 'TurmaController');
 
+    Route::resource('/turma_disciplina', 'TurmaController@disciplinas');
+    
+    Route::post('/turma_disciplina_store', 'TurmaController@turma_disciplinas_store');
+    
     Route::resource('disciplinas', 'DisciplinaController');
 
     Route::resource('professors', 'ProfessorController');

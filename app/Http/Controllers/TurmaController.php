@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Turma;
+use App\Disciplina;
 use Illuminate\Http\Request;
 use Infinety\Alerts\AlertServiceProvider;
 
@@ -110,6 +111,17 @@ class TurmaController extends Controller {
         $turma->delete();
 
 		return redirect()->route('turmas.index')->with(alert()->error('Turma Deletada', 'Turma deletada da lista.'));
+	}
+
+	public function disciplinas($id)
+	{
+		$turma = Turma::findOrFail($id);
+		$disciplinas = Disciplina::all();
+
+		return view('turmas.disciplinas', compact('turma', 'disciplinas'));
+	}
+	public function turma_disciplinas_store(Request $request){
+
 	}
 
 }

@@ -7,7 +7,6 @@
                 <div class="col-md-12">
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
                             <div class="card">
                                 <div class="header">
                                     <h1><i class="material-icons">add</i> Adicione um Aluno</h1>
@@ -112,23 +111,17 @@
                                                 @else
                                                     <label for="turma">Turma: </label>
                                                     <select class="form-control show-tick" name="turma" id="turma" required>
-
-
                                                         @foreach($turmas as $turma)
                                                             <option value="{{$turma->id}}">{{$turma->nome}}</option>
                                                         @endforeach
-
-
                                                     </select>
-
                                                 @endif
-
                                             </div>
                                         </div>
-                                            <div class="col-sm-12">
-                                                <button type="submit" class="btn btn-primary">Criar</button>
-                                                <a class="btn btn-link pull-right" href="{{ route('studants.index') }}"><i class="material-icons">arrow_back</i></a>
-                                            </div>
+                                        <div class="col-sm-12">
+                                            <button type="submit" class="btn btn-primary">Criar</button>
+                                            <a class="btn btn-link pull-right" href="{{ route('studants.index') }}"><i class="material-icons">arrow_back</i></a>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

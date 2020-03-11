@@ -26,6 +26,7 @@
                                             <td>{{$turma->id}}</td>
                                             <td>{{$turma->nome}}</td>
                                             <td>
+                                                <a href="{{ url('/turma_disciplina/' . $turma->id) }}" title="Adicionar Disciplinas"><button class="btn btn-primary btn-xs waves-effect"><i class="material-icons">note_add</i></button></a>
                                                 <a href="{{ route('turmas.edit', $turma->id) }}" title="Editar"><button class="btn btn-warning btn-xs waves-effect"><i class="material-icons">edit</i></button></a>
                                                 <form action="{{ route('turmas.destroy', $turma->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar? A confirmação apagará PERMANENTEMENTE!')) { return true } else {return false };">
                                                     <input type="hidden" name="_method" value="DELETE">
