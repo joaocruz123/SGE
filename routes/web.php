@@ -32,41 +32,22 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => ['web']], function(){
     Route::resource('studants','StudantController');
-
     Route::resource('turmas', 'TurmaController');
-
-    Route::resource('/turma_disciplina', 'TurmaController@disciplinas');
-    
-    Route::post('/turma_disciplina_store', 'TurmaController@turma_disciplinas_store');
-    
+    Route::resource('/turma_disciplina', 'TurmaController@disciplinas');    
+    Route::resource('/turma_disciplina_store', 'TurmaController@turma_disciplinas_store');    
     Route::resource('disciplinas', 'DisciplinaController');
-
     Route::resource('professors', 'ProfessorController');
-
     Route::resource('matriculas', 'MatriculaController');
-
     Route::resource('categorias_despesas', 'CategoriasDespesaController');
-
     Route::resource('categorias_rendas', 'CategoriasRendaController');
-
     Route::resource('despesas', 'DespesasController');
-
     Route::resource('rendas', 'RendasController');
-
     Route::resource('relatorio_mensal', 'RelatorioMensalController');
-
     Route::get('/imprimir/relatorio', 'RelatorioMensalController@gerarPdf');
-
     Route::get('/imprimir/lista', 'StudantController@gerarPdf');
-
     Route::get('/imprimir/aluno', 'StudantController@gerarPdf');
-
     Route::resource('aluno_relatorio', 'StudantController@relatorioAluno');
-
     Route::resource('chamadas', 'ChamadaController');
-
     Route::put('/fazer_chamada/chamada/{id}', 'ChamadaController@fazer_chamada');
-
     Route::resource('/chamadas/frequencia/{id}', 'ChamadaController@frequencia');
-
 });

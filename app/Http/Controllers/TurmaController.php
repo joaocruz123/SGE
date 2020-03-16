@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Turma;
 use App\Disciplina;
+use App\TurmaDisciplina;
 use Illuminate\Http\Request;
 use Infinety\Alerts\AlertServiceProvider;
 
@@ -120,7 +121,17 @@ class TurmaController extends Controller {
 
 		return view('turmas.disciplinas', compact('turma', 'disciplinas'));
 	}
-	public function turma_disciplinas_store(Request $request){
+	public function turma_disciplinas_store(Request $request, $id){
+		$turma = Turma::findOrFail($id);
+		$disciplinas = Disciplina::all();
+		
+		$turma_disciplina = new TurmaDisciplina();
+
+		$turma_disciplina->disciplina_id = $request->disciplina;
+		$turma_disciplina->turma_id = $id;
+		$turma_disciplina->save();
+
+		return view('turmas.disciplinas', compact('turma', 'disciplinas'));
 
 	}
 

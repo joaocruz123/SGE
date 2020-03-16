@@ -28,9 +28,10 @@
                         </div>
                         <div class="body table-responsive">
                             @if($studants->count())
-                                <table class="table table-bordered">
-                                    <thead class="bg-blue-grey">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>Matricula</th>
                                         <th>Nome</th>
                                         <th>Turma</th>
@@ -41,7 +42,8 @@
                                     <tbody>
                                     @foreach($studants as $studant)
                                         <tr>
-                                            <td style="color: red">{{$studant->matricula}}</td>
+                                            <td>{{$studant->id}}</td>
+                                            <td>{{$studant->matricula}}</td>
                                             <td>{{$studant->nome}}</td>
                                             <td>{{$studant->turma->nome}}</td>
                                             <td>{{date('d/m/Y', strtotime($studant->created_at))}}</td>

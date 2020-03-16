@@ -11,6 +11,7 @@
                             <h1><i class="material-icons">class</i> Add Disciplinas a Turma #{{$turma->id}}</h1>
                         </div>
                         <div class="body table-responsive">
+                            <form action="{{ url('/turma_disciplina_store/' . $turma->id) }}" method="POST">
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="col-sm-6">
@@ -26,7 +27,6 @@
                                     @endif
                                 </div>
                             </div>
-                            <form action="{{ route('turmas.turma_disciplinas_store') }}" method="POST">
                             <div class="col-sm-6">
                                 <div class="row">
                                     <div class="col-sm-11">
@@ -49,7 +49,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-1 m-t-20">
-                                        <button class="btn btn-primary btn-sm pull-right" href="{{ route('turmas.index') }}"><i class="material-icons">add</i></button>
+                                        <button class="btn btn-primary btn-sm pull-right" type="submit"><i class="material-icons">add</i></button>
                                     </div>
                                 </div>                                
                             </div>
